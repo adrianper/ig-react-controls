@@ -1,0 +1,117 @@
+@function getTextSize($i) {
+    $size: map-get((1: var(--text-size--1),
+            2: var(--text-size--2),
+            3: var(--text-size--3),
+            4: var(--text-size--4),
+            5: var(--text-size--5),
+            6: var(--text-size--6),
+            7: var(--text-size--7),
+            8: var(--text-size--8),
+            9: var(--text-size--9),
+            10: var(--text-size--10),
+        ), $i);
+
+    @return $size;
+}
+
+@mixin text_elipsis {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin text_props() {
+
+    //------------------------------SIZE--------------------------------------
+    @for $i from 1 through 11 {
+        &.text--size--#{$i} {
+            font-size: getTextSize($i);
+        }
+    }
+
+    //----------------------------ALIGN--------------------------------------
+    @each $align in left,
+    center,
+    right,
+    justify {
+        &.text--align--#{$align} {
+            text-align: $align;
+        }
+    }
+
+    //----------------------------WEIGHT--------------------------------------
+    &.text--regular {
+        font-weight: 400;
+    }
+
+    &.text--medium {
+        font-weight: 500;
+    }
+
+    &.text--bold {
+        font-weight: 700;
+    }
+
+
+    //----------------------------DECORATION--------------------------------------
+    &.text--underline {
+        text-decoration: underline;
+    }
+
+    //----------------------------SELECTABLE--------------------------------------
+    &.text--unselectable {
+        user-select: none;
+    }
+
+    //------------------------------ELIPSIS---------------------------------------
+    &.text--elipsis {
+        @include text_elipsis;
+    }
+
+    //-----------------------------COLOR--------------------------------------
+    @each $color in error,
+    first,
+    second,
+    third,
+    fourth,
+    fifth,
+    sixth,
+    seventh,
+    eighth,
+    white {
+        &.text--color--#{"" + $color} {
+            color: var(--text--color--#{$color});
+        }
+    }
+}
+
+@mixin underlined {
+    &.underline {
+        text-decoration: underline;
+    }
+}
+
+@mixin resetButton() {
+    padding: 0.3em 1em;
+    // font-size: 1em;
+    background-color: transparent;
+    border-radius: 1em;
+    border-width: 2px;
+    border-style: solid;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+@mixin default_button {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    font-size: getTextSize(5);
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    // font-weight: $font--medium;
+}

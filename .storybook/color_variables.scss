@@ -1,0 +1,95 @@
+@function hexToRgb($color) {
+    @return red($color),
+    green($color),
+    blue($color);
+}
+
+body {
+    // ----------------------CUSTOM COLORS-------------------
+    --color--green--1: #24BD58;
+    --color--green--2: #39e600;
+    --color--green--1--rgb: #{hexToRgb(#24BE58)};
+    --color--green--2--rgb: #{hexToRgb(#39e600)};
+    --color--green--3: #CDF8BF;
+    --color--green--4: #BBFF94;
+    --color--green--5: #6CF33F;
+    --color--black--1: #000;
+    --color--black--2: #414042;
+    --color--black--3: #232323;
+    --color--black--4: #333333;
+    --color--black--4--rgb: #{hexToRgb(#333333)};
+    --color--gray--1: #4D4D4D;
+    --color--gray--2: #737373;
+    --color--gray--3: #99989D;
+    --color--gray--4: #B4B5B4;
+    --color--gray--5: #C3C4C9;
+    --color--gray--6: #D9D9DA;
+    --color--white--1: #FFFFFF;
+    --color--white--1--rgb: #{hexToRgb(#FFFFFF)};
+    --color--white--2: #F2F2F2;
+    --color--white--2--rgb: #{hexToRgb(#F2F2F2)};
+    --color--blue--1: #008DDD;
+    --color--blue--2: #2D9CDB;
+    --color--blue--3: #050561;
+    --color--blue--4: #3DB8F3;
+    --color--blue--5: #95D3CA;
+    --color--blue--6: #EBF4F3;
+    --color--blue--7: #0E74FF;
+    --color--red--1: #FF0000;
+    --color--red--2: #ff4444;
+    --color--yellow--1: #FFD600;
+    --color--magenta--1: #CC176A;
+
+    /*-----------------------------COMPONENT SETTINGS-------------------------------*/
+    --shadow--color: rgba(195, 196, 201, 0.6); //shadow effect
+    --app--bg--color: var(--color--white--1--rgb); //background
+    --app--bg--color-alter: var(--color--white--2--rgb); //background variant
+    --card--shadow: 0px 0px 6px 2px var(--shadow--color);
+
+    /*-----------------------------COMPONENTS COLORS-------------------------------*/
+    /*-----------------------------ICON COLORS-------------------------------*/
+    --filter--first: var(--filter--green--1);
+    --filter--second: var(--filter--green--2);
+    --filter--third: var(--filter--green--3);
+    --filter--fourth: var(--filter--gray--1);
+    --filter--fifth: var(--filter--white--2);
+    --filter--sixth: var(--filter--green--4);
+    --filter--seventh: var(--filter--gray--2);
+
+    /*-----------------------------TEXT COLORS-------------------------------*/
+    --text--color--first: var(--color--gray--1); //text general
+    --text--color--second: var(--color--gray--2); //text variant
+    --text--color--third: var(--color--black--4); //titles
+    --text--color--fourth: var(--color--gray--4);
+    --text--color--fifth: var(--color--gray--5);
+    --text--color--sixth: var(--color--gray--6);
+    --text--color--seventh: var(--color--green--1);
+    --text--color--eighth: var(--color--gray--3);
+    --text--color--error: var(--color--red--1);
+
+    /*-----------------------------THEME-------------------------------*/
+    --component--color: var(--color--green--1);
+    --component--color--active: var(--color--green--2);
+    --component--color--inactive: var(--color--gray--3);
+    --component--text-color: var(--text--color--first);
+    --component--label-color--inactive: var(--color--gray--2);
+    --component--option--bg-color--hover: var(--color--green--3);
+
+    /*-----------------------------ICONS-------------------------------*/
+    --filter--inactive: var(--filter--gray--3);
+    --filter--active: var(--filter--green--1);
+}
+
+body.dark {
+    /*-----------------------------COMPONENT SETTINGS-------------------------------*/
+    --shadow--color: rgba(51, 51, 51, 1); //shadow effect
+    // --card--shadow: 0px 0px 6px 2px var(--shadow--color);
+    --app--bg--color: #{hexToRgb(#141414)}; //background
+    --app--bg--color-alter: var(--color--black--4--rgb); //background variant
+
+    /*-----------------------------COMPONENTS COLORS-------------------------------*/
+    /*-----------------------------TEXT COLORS-------------------------------*/
+    --text--color--first: var(--color--white--1); //text general
+    --text--color--second: var(--color--gray--5); //text variant
+    --text--color--third: var(--color--white--1); //titles
+}

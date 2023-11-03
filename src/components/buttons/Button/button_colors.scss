@@ -1,0 +1,49 @@
+@import '../../../stories/variables.scss';
+
+.button {
+    background-color: transparent;
+    border: 2px solid var(--component--color);
+
+    &:hover {
+        border-color: var(--component--color--active);
+    }
+
+    &.button--variant--filled {
+        color: rgb(var(--app--bg--color));
+        background-color: var(--component--color);
+
+        &:hover {
+            background-color: var(--component--color--active);
+        }
+
+        &--danger {
+            color: rgb(var(--app--bg--color));
+            border-color: var(--color--red--1);
+            background-color: var(--color--red--1);
+
+            &:hover {
+                border-color: var(--color--red--2);
+                background-color: var(--color--red--2);
+            }
+        }
+    }
+
+    &.button--variant--outlined {
+        color: var(--component--color);
+        background-color: transparent;
+
+        &:hover {
+            color: var(--component--color--active);
+        }
+
+        &--danger {
+            color: var(--color--red--1);
+            border-color: var(--color--red--1);
+
+            &:hover {
+                color: var(--color--red--2);
+                border-color: var(--color--red--2);
+            }
+        }
+    }
+}

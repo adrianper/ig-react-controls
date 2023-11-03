@@ -1,0 +1,9 @@
+@import './icon_button_colors.scss';
+
+.icon_button {
+    display: flex;
+    width: fit-content;
+    padding: 10px 12px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}

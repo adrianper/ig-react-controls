@@ -1,11 +1,11 @@
-import { Button } from "../components";
+import { IconButton } from "../components";
 
-const variants = { 'filled': 'filled', 'filled--danger': 'filled--danger', 'outlined': 'outlined', 'outlined--danger': 'outlined--danger' };
+const positions = { 'up': 'up', 'right': 'right', 'down': 'down', 'left': 'left' };
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Components/Button',
-    component: Button,
+    title: 'Components/IconButton',
+    component: IconButton,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
@@ -14,24 +14,24 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        variant: {
-            options: Object.keys(variants),
-            mapping: variants,
+        direction: {
+            options: Object.keys(positions),
+            mapping: positions,
             control: {
                 type: 'select', labels: {
-                    'filled': 'Filled',
-                    'filled--danger': 'Filled Danger',
-                    'outlined': 'Outlined',
-                    'outlined--danger': 'Outlined Danger',
+                    'up': 'up',
+                    'right': 'right',
+                    'down': 'down',
+                    'left': 'left',
                 }
             }
         },
     },
 };
 
-export const Default = {
+export const AddIcon = {
     args: {
-        children: 'Click me!',
-        variant: 'filled',
+        icon: 'add',
+        size: 1.5,
     }
 }
