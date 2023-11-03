@@ -39,6 +39,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: build
+          jekyll: false
   # deploy:
   #   environment:
   #     name: github-pages
