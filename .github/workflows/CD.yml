@@ -35,8 +35,6 @@ jobs:
           npm run build-storybook
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.NPM_GITHUB_PACKAGES }}
         with:
           target_branch: gh-pages
           build_dir: storybook-static
@@ -44,6 +42,8 @@ jobs:
           keep_history: false
           jekyll: false
           fqdn: outline.phase2tech.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # uses: JamesIves/github-pages-deploy-action@3.7.1
         # with:
         #   github_token: ${{ secrets.GITHUB_TOKEN }}
