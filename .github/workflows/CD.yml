@@ -35,7 +35,7 @@ jobs:
           npm run build-storybook
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v3
-        environment:
+        env:
           GITHUB_TOKEN: ${{ secrets.NPM_GITHUB_PACKAGES }}
         with:
           target_branch: gh-pages
