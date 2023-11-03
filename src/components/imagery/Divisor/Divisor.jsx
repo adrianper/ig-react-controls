@@ -19,17 +19,21 @@ const Divisor = (props) => {
 
     if (vertical) {
         height = height || '100%'
-        width = 0
-        style["borderLeftWidth"] = thickness
+        width = thickness
+        style.margin = `0 ${margin}`
     } else {
-        height = 0
+        height = thickness
         width = width || '100%'
-        style["borderTopWidth"] = thickness
+        style.margin = `${margin} 0`
     }
 
-    className += ` divisor divisor--color--${color}`
+    className += ` divisor`
 
-    return <div {...{ className, style: { ...style, width, height, maxWidth, margin } }} />
+    if (color) {
+        style.backgroundColor = `var(--color--${color})`
+    }
+
+    return <div {...{ className, style: { ...style, minWidth: width, minHeight: height, maxWidth } }} />
 }
 
 Divisor.propTypes = {
@@ -45,7 +49,7 @@ Divisor.propTypes = {
 
 Divisor.defaultProps = {
     className: '',
-    color: 'first',
+    color: undefined,
     height: undefined,
     margin: undefined,
     maxWidth: undefined,
@@ -53,6 +57,5 @@ Divisor.defaultProps = {
     vertical: false,
     width: undefined,
 };
-
 
 export default memo(Divisor)
