@@ -1,4 +1,6 @@
-import { Flex } from "../components";
+import { Flex as FlexComponent } from "../components";
+
+const Flex = props => <FlexComponent {...props} />
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -49,5 +51,5 @@ export const Example = {
         padding: '1rem',
         style: { border: '1px solid black', minHeight: '100px' }
     },
-    render: (args) => <FlexExample {...args} />
+    render: FlexExample
 }

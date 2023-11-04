@@ -1,4 +1,7 @@
-import { Flex, Grid } from "../components";
+import { Flex as FlexComponent, Grid as GridComponent } from "../components";
+
+const Grid = props => <GridComponent {...props} />
+const Flex = props => <FlexComponent {...props} />
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -55,5 +58,5 @@ export const Example = {
         style: { border: '1px solid black', minHeight: '100px' },
         // direction: 'column'
     },
-    render: (args) => <GridExample {...args} />
+    render: GridExample
 }

@@ -76,7 +76,7 @@ GridComponent.defaultProps = {
     itemsX: undefined,
     itemsY: undefined,
     contentX: undefined,
-    contentY: 'start',
+    contentY: undefined,
     w100: undefined,
     h100: undefined,
     maxWidth: undefined,

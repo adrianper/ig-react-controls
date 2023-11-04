@@ -1,4 +1,6 @@
-import { Divisor, Flex } from "../components";
+import { Divisor, Flex as FlexComponent } from "../components";
+
+const Flex = props => <FlexComponent {...props} />
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -24,23 +26,23 @@ export default {
     },
 };
 
-export const Default = {
-    args: {
-        width: '100px',
-        thickness: '2px',
-        color: 'green--2'
-    },
-    render: (args) => <Divisor {...args} />
-}
+// export const Default = {
+//     args: {
+//         width: '100px',
+//         thickness: '2px',
+//         color: 'green--2'
+//     },
+//     render: (args) => <Divisor {...args} />
+// }
 
-const DivisorExample = () => {
+const DivisorExample = (props) => {
     return (
         <Flex>
             <p>Vertical divisor</p>
-            <Divisor vertical color='green--1' margin='2px' thickness='2px' />
+            <Divisor vertical color='green--1' margin='4px' />
             <Flex direction='column'>
                 <p>Horizontal divisor</p>
-                <Divisor color='green--1' margin='2px' thickness='2px' />
+                <Divisor color='green--1' margin='4px' />
                 <p>Horizontal divisor</p>
             </Flex>
         </Flex>
@@ -48,5 +50,5 @@ const DivisorExample = () => {
 }
 
 export const Example = {
-    render: () => <DivisorExample />,
+    render: DivisorExample,
 }
