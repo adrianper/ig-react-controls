@@ -5,7 +5,7 @@ import reactFastCompare from 'react-fast-compare'
 import './flex.scss'
 
 const FlexComponent = forwardRef(function Flex(props, ref) {
-    let { className, } = props
+    let { className } = props
 
     const {
         style,
@@ -48,6 +48,7 @@ const FlexComponent = forwardRef(function Flex(props, ref) {
 })
 
 FlexComponent.propTypes = {
+    className: PropTypes.string,
     style: PropTypes.object,
     margin: PropTypes.string,
     padding: PropTypes.string,
@@ -63,6 +64,7 @@ FlexComponent.propTypes = {
 };
 
 FlexComponent.defaultProps = {
+    className: undefined,
     style: undefined,
     margin: undefined,
     padding: undefined,

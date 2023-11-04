@@ -1,9 +1,9 @@
-import { Flex } from "../components";
+import { Flex, Grid } from "../components";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Containers/Flex',
-    component: Flex,
+    title: 'Containers/Grid',
+    component: Grid,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
@@ -14,40 +14,46 @@ export default {
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         // style: { control: 'object' },
-        // margin: { control: 'text' },
-        // padding: { control: 'text' },
+        // // className: {},
+        // // padding: {},
+        // // margin: {},
+        // // gap: {},
+        columns: { control: 'text', description: '**grid-template-columns** CSS property' },
+        rows: { control: 'text', description: '**grid-template-rows** CSS property' },
         direction: { control: 'radio', options: ['column', 'row'] },
-        // gap: { control: 'text' },
-        align: { control: 'text', description: '**align-items** CSS property' },
-        justify: { control: 'text', description: '**justify-content** CSS property' },
-        // maxWidth: { control: 'text' },
-        // w100: { control: 'boolean' },
-        // h100: { control: 'boolean' },
+        itemsX: { control: 'text', description: '**justify-items** CSS property' },
+        itemsY: { control: 'text', description: '**align-items** CSS property' },
+        contentX: { control: 'text', description: '**justify-content** CSS property' },
+        contentY: { control: 'text', description: '**align-content** CSS property' },
+        // // w100: {},
+        // // h100: {},
+        // // maxWidth: {},
+        selfX: { control: 'text', description: '**justify-self** CSS property' },
+        selfY: { control: 'text', description: '**align-self** CSS property' },
         skipClickOutside: { control: 'boolean', description: 'If **true** container is ignored in function clickOutside', },
-        // wrap: { control: 'boolean' },
     },
 };
 
 const flexItemStyle = { border: '1px solid gray', borderRadius: '4px', padding: '2px' }
-const FlexExample = (props) => {
+const GridExample = (props) => {
     return (
-        <Flex {...props}>
+        <Grid {...props}>
             <Flex style={flexItemStyle}>Item1</Flex>
             <Flex style={flexItemStyle}>Item2</Flex>
             <Flex style={flexItemStyle}>Item3</Flex>
             <Flex style={flexItemStyle}>Item4</Flex>
             <Flex style={flexItemStyle}>Item5</Flex>
-        </Flex>
+        </Grid>
     )
 }
 
 export const Example = {
     args: {
-        wrap: true,
         gap: '10px',
         maxWidth: '300px',
         padding: '1rem',
-        style: { border: '1px solid black', minHeight: '100px' }
+        style: { border: '1px solid black', minHeight: '100px' },
+        // direction: 'column'
     },
-    render: (args) => <FlexExample {...args} />
+    render: (args) => <GridExample {...args} />
 }
