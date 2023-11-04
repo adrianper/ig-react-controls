@@ -1,5 +1,6 @@
 /** @type { import('@storybook/react').Preview } */
 import './color_variables.scss'
+import './general.scss'
 import './general_functions.scss'
 
 const preview = {

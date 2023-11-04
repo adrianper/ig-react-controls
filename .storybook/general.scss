@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+
+    &:disabled {
+        opacity: 0.7;
+        pointer-events: none;
+        user-select: none;
+    }
+
+}
+
+.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
