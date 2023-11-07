@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import './icon.scss'
 
 const calcRotation = (direction) => ({
-    up: 0,
-    right: 90,
-    down: 180,
-    left: -90,
+    up: 'rotate--0',
+    right: 'rotate--90',
+    down: 'rotate--180',
+    left: 'rotate--270',
 })[direction]
 
 const Icon = (props) => {
@@ -24,6 +24,7 @@ const Icon = (props) => {
 
     className += ' icon'
     className += icon !== '' ? ` icon--${icon}` : ''
+    className += ` ${calcRotation(direction)}`
 
     if (filter !== '') style['filter'] = `var(--filter--${filter})`
 
@@ -31,7 +32,6 @@ const Icon = (props) => {
         width: `${size}rem`,
         height: `${size}rem`,
         backgroundImage: `url(https://s3.us-east-2.amazonaws.com/magiei2/public/img/icons/${icon}.svg)`,
-        transform: `rotateZ(${calcRotation(direction)}deg)`,
         ...style
     }
 

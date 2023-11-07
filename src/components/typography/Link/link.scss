@@ -1,0 +1,16 @@
+@import '/src/styles/general/general_functions.scss';
+
+.link {
+    color: var(--component--color);
+    text-align: left;
+    font-size: getTextSize(3);
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+
+    @include text_props;
+
+    &:hover {
+        color: var(--component--color--active);
+    }
+}

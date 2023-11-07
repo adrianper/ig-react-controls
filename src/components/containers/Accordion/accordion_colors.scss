@@ -1,0 +1,24 @@
+.accordion {
+    .accordion_title {
+        border-bottom-color: var(--component--color);
+
+        .title__arrow {
+            // svg {
+            //     color: var(--component--color--active);
+            // }
+            filter: var(--filter--inactive);
+        }
+
+        &:hover {
+            border-bottom-color: var(--component--color--active);
+
+            .title__arrow {
+                filter: var(--filter--active);
+            }
+
+            // .title__arrow svg {
+            //     color: var(--component--color--active);
+            // }
+        }
+    }
+}

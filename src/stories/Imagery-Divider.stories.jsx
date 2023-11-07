@@ -1,4 +1,4 @@
-import { Divider, Flex as FlexComponent, Grid } from "../components";
+import { Divider, Flex as FlexComponent } from "../components";
 
 const Flex = props => <FlexComponent {...props} />
 
