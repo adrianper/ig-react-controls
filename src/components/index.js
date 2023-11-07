@@ -8,5 +8,5 @@ export { default as Grid } from './containers/Grid/Grid.jsx'
 export { default as Slider } from './containers/Slider/Slider.jsx'
 
 /** Imagery */
-export { default as Divisor } from './imagery/Divisor/Divisor.jsx'
+export { default as Divider } from './imagery/Divider/Divider.jsx'
 export { default as Icon } from './imagery/Icon/Icon.jsx'
