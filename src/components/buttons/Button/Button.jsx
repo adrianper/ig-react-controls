@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { forwardRef, memo } from 'react'
 import PropTypes from 'prop-types';
 import reactFastCompare from 'react-fast-compare'
 
@@ -9,7 +9,7 @@ const tp = (propName, prop) => {
     else return ''
 }
 
-const Button = props => {
+const ButtonComponent = forwardRef(function Button(props, ref) {
     let {
         className = '',
         children,
@@ -22,24 +22,24 @@ const Button = props => {
     className += tp('variant', variant)
     className += ' button'
 
-    return <button className={className} style={style} onClick={onClick}  {...rest}>{children}</button>
+    return <button ref={ref} className={className} style={style} onClick={onClick}  {...rest}>{children}</button>
 
-}
+})
 
-Button.propTypes = {
+ButtonComponent.propTypes = {
     children: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     onClick: PropTypes.func.isRequired,
     style: PropTypes.object,
     variant: PropTypes.oneOf(['filled', 'filled--danger', 'outlined', 'outlined--danger']),
 };
 
-Button.defaultProps = {
-    children: '',
-    className: '',
+ButtonComponent.defaultProps = {
+    children: undefined,
+    className: undefined,
     onClick: undefined,
-    style: undefined,
+    style: {},
     variant: 'filled',
 };
 
-export default memo(Button, reactFastCompare)
+export default memo(ButtonComponent, reactFastCompare)

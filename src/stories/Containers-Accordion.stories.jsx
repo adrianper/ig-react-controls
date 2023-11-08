@@ -1,4 +1,5 @@
 import { Accordion, Flex as FlexComponent, Text } from "../components";
+import { customArgTypes } from "./customArgTypes";
 
 const Flex = props => <FlexComponent {...props} />
 
@@ -14,7 +15,11 @@ export default {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    argTypes: {},
+    argTypes: {
+        className: customArgTypes.className,
+        title: { table: { defaultValue: { summary: 'undefined' } } },
+        toggleElement: { control: 'none', table: { defaultValue: { summary: 'undefined' } } },
+    },
 };
 
 const AccordionExample = (props) => {
@@ -22,7 +27,7 @@ const AccordionExample = (props) => {
 
     return (
         <Flex direction='column'>
-            <Accordion title='Accordion 1'>
+            <Accordion title={props.title || 'Accordion 1'} className={props.className}>
                 <Text>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed efficitur arcu, a semper erat. Nulla ut justo vitae mauris pretium posuere id id ipsum. Vivamus id dictum justo. Nulla facilisi. Vestibulum ullamcorper malesuada augue eu commodo. Mauris dapibus, risus id tristique gravida, nulla nisl viverra ipsum, dictum vehicula ipsum nulla non metus. Vestibulum id erat ipsum. Aliquam bibendum tortor non turpis porta faucibus. Nunc facilisis, eros sit amet ornare cursus, ante elit feugiat enim, a tempor orci turpis sed nisi.
                 </Text>

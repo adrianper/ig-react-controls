@@ -1,4 +1,5 @@
 import { IconButton } from "../components";
+import { customArgTypes } from "./customArgTypes";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -13,10 +14,13 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
+        className: customArgTypes.className,
         direction: {
             options: ['up', 'right', 'down', 'left'],
             control: { type: 'select' }
         },
+        icon: { table: { defaultValue: { summary: 'undefined' } } },
+        onClick: customArgTypes.onClick,
     },
 };
 

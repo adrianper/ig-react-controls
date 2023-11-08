@@ -80,7 +80,7 @@ Text.defaultProps = {
     ellipsis: false,
     elipsisLines: 1,
     underline: false,
-    className: '',
+    className: undefined,
     color: 'first',
     align: '',
     variant: 'p',

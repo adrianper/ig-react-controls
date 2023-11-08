@@ -4,6 +4,7 @@ export { default as IconButton } from './buttons/IconButton/IconButton.jsx'
 
 /** Containers */
 export { default as Accordion } from './containers/Accordion/Accordion.jsx'
+export { default as AccordionGroup } from './containers/AccordionGroup/AccordionGroup.jsx'
 export { default as Flex } from './containers/Flex/Flex.jsx'
 export { default as Grid } from './containers/Grid/Grid.jsx'
 export { default as Slider } from './containers/Slider/Slider.jsx'

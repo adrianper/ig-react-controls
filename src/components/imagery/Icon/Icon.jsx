@@ -51,8 +51,8 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-    icon: '',
-    className: '',
+    icon: undefined,
+    className: undefined,
     size: 1,
     direction: 'up',
     onClick: undefined,

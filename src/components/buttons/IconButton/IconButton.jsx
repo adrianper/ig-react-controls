@@ -41,8 +41,8 @@ IconButton.propTypes = {
 };
 
 IconButton.defaultProps = {
-    icon: '',
-    className: '',
+    icon: undefined,
+    className: undefined,
     size: 1.3,
     direction: 'up',
     onClick: undefined,

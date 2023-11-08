@@ -1,4 +1,5 @@
 import { Flex as FlexComponent } from "../components";
+import { customArgTypes, customTableDefaults } from "./customArgTypes";
 
 const Flex = props => <FlexComponent {...props} />
 
@@ -15,18 +16,19 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        // style: { control: 'object' },
-        // margin: { control: 'text' },
-        // padding: { control: 'text' },
-        direction: { control: 'radio', options: ['column', 'row'] },
-        // gap: { control: 'text' },
-        align: { control: 'text', description: '**align-items** CSS property' },
-        justify: { control: 'text', description: '**justify-content** CSS property' },
-        // maxWidth: { control: 'text' },
+        className: customArgTypes.className,
+        style: customArgTypes.style,
+        margin: customArgTypes.margin,
+        padding: customArgTypes.padding,
+        direction: { control: 'radio', description: '**flex-direction** CSS property', options: ['column', 'row'], table: customTableDefaults.string },
+        gap: customArgTypes.gap,
+        align: { control: 'text', description: '**align-items** CSS property', table: customTableDefaults.string },
+        justify: { control: 'text', description: '**justify-content** CSS property', table: customTableDefaults.string },
+        maxWidth: customArgTypes.maxWidth,
         // w100: { control: 'boolean' },
         // h100: { control: 'boolean' },
-        skipClickOutside: { control: 'boolean', description: 'If **true** container is ignored in function clickOutside', },
-        // wrap: { control: 'boolean' },
+        skipClickOutside: customArgTypes.skipClickOutside,
+        wrap: { control: 'boolean', description: '**flex-wrap** CSS property', table: customTableDefaults.bool },
     },
 };
 

@@ -1,6 +1,7 @@
 import { Button } from "../components";
+import { customArgTypes } from "./customArgTypes";
 
-const variants = { 'filled': 'filled', 'filled--danger': 'filled--danger', 'outlined': 'outlined', 'outlined--danger': 'outlined--danger' };
+// const variants = { 'filled': 'filled', 'filled--danger': 'filled--danger', 'outlined': 'outlined', 'outlined--danger': 'outlined--danger' };
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -15,6 +16,10 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
+        children: { table: { defaultValue: { summary: 'undefined' } } },
+        className: customArgTypes.className,
+        onClick: customArgTypes.onClick,
+        ref: customArgTypes.ref,
         variant: {
             // options: Object.keys(variants),
             // mapping: variants,
@@ -34,6 +39,6 @@ export default {
 export const Default = {
     args: {
         children: 'Click me!',
-        variant: 'filled',
-    }
+        variant: 'outlined',
+    },
 }

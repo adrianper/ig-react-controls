@@ -65,7 +65,7 @@ FlexComponent.propTypes = {
 
 FlexComponent.defaultProps = {
     className: undefined,
-    style: undefined,
+    style: {},
     margin: undefined,
     padding: undefined,
     direction: undefined,

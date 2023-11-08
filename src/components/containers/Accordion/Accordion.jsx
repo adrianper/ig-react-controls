@@ -34,11 +34,13 @@ const Accordion = (props) => {
     )
 }
 
-Accordion.propTypes = {
+export const accordionPropTypes = {
     className: PropTypes.string,
     title: PropTypes.string,
     toggleElement: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
 }
+
+Accordion.propTypes = accordionPropTypes
 
 Accordion.defaultProps = {
     className: undefined,

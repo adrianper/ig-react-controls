@@ -1,4 +1,5 @@
 import { Flex as FlexComponent, Grid as GridComponent } from "../components";
+import { customArgTypes } from "./customArgTypes";
 
 const Grid = props => <GridComponent {...props} />
 const Flex = props => <FlexComponent {...props} />
@@ -16,24 +17,24 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        // style: { control: 'object' },
-        // // className: {},
-        // // padding: {},
-        // // margin: {},
-        // // gap: {},
+        style: customArgTypes.style,
+        className: customArgTypes.className,
+        padding: customArgTypes.padding,
+        margin: customArgTypes.margin,
+        gap: customArgTypes.gap,
         columns: { control: 'text', description: '**grid-template-columns** CSS property' },
         rows: { control: 'text', description: '**grid-template-rows** CSS property' },
-        direction: { control: 'radio', options: ['column', 'row'] },
+        direction: { control: 'radio', description: '**grid-auto-flow** CSS property', options: ['column', 'row'], table: { type: { summary: 'string' }, defaultValue: '' } },
         itemsX: { control: 'text', description: '**justify-items** CSS property' },
         itemsY: { control: 'text', description: '**align-items** CSS property' },
         contentX: { control: 'text', description: '**justify-content** CSS property' },
         contentY: { control: 'text', description: '**align-content** CSS property' },
         // // w100: {},
         // // h100: {},
-        // // maxWidth: {},
+        maxWidth: customArgTypes.maxWidth,
         selfX: { control: 'text', description: '**justify-self** CSS property' },
         selfY: { control: 'text', description: '**align-self** CSS property' },
-        skipClickOutside: { control: 'boolean', description: 'If **true** container is ignored in function clickOutside', },
+        skipClickOutside: customArgTypes.skipClickOutside,
     },
 };
 

@@ -17,7 +17,7 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        containerProps: { control: 'none', description: '**Flex** component properties' },
+        containerProps: { control: 'none', description: '**Flex** container properties' },
         currentScreen: { control: 'none', description: 'Control current screen  component properties' },
     },
 };

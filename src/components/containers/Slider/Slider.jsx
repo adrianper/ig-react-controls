@@ -49,9 +49,4 @@ Slider.defaultProps = {
     currentScreen: 0,
 }
 
-// import SliderScreen from './SliderScreen'
-// <SliderScreen key={i} screenIdx={i} currentScreen={currentScreen}>
-//     {child}
-// </SliderScreen>
-
 export default memo(Slider, reactFastCompare)
