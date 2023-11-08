@@ -17,7 +17,7 @@ export default {
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         className: customArgTypes.className,
-        title: { table: { defaultValue: { summary: 'undefined' } } },
+        title: { table: { defaultValue: { summary: '' } } },
         toggleElement: { control: 'none', table: { defaultValue: { summary: 'undefined' } } },
     },
 };
