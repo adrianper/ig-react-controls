@@ -22,7 +22,7 @@ export default {
             description: 'Array of Accordion props objects. Pass prop `content` as `children` prop',
             table: { type: {}, defaultValue: { summary: '[]' } }
         },
-        ref: customArgTypes.ref,
+        ref: { ...customArgTypes.ref, description: 'Component ref' },
     },
 };
 
