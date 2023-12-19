@@ -59,8 +59,8 @@
         text-decoration: underline;
     }
 
-    //----------------------------SELECTABLE--------------------------------------
-    &.text--unselectable {
+    //----------------------------DISABLED--------------------------------------
+    &.text--disabled {
         user-select: none;
     }
 

@@ -1,12 +1,10 @@
-@import '../../../../.storybook/general_functions.scss';
-@import '../../../../.storybook/color_variables.scss';
 @import './button_colors.scss';
 
 .button {
     font-weight: bold;
     padding: 1.2857rem 1.7142rem;
     border-radius: 35px;
-    font-size: getTextSize(3);
+    font-size: var(--text-size--3)F;
     line-height: 16px;
     cursor: pointer;
     height: fit-content;
@@ -16,7 +14,7 @@
     }
 }
 
-@media only screen and (min-width: $size--laptop) {
+@media only screen and (min-width: var(--size--laptop)) {
     .button {
         padding: 0.458rem 0.9rem;
     }

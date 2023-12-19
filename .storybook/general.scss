@@ -1,3 +1,56 @@
+:root {
+    //--------------------------------ScreenSizes--------------------------------
+
+    --size--tablet: 480px;
+    --size--laptop: 768px;
+    --size--desktop: 1024px;
+    --size--tv: 1440px;
+    --size--4k: 2500px;
+
+    //--------------------------------ZIndexes--------------------------------
+    --index--combobox_list: 1000;
+    --index--tooltip: 1000;
+    --index--loading: 10000;
+    --index--message-box: 1100;
+
+    //--------------------------------TransitionParams--------------------------------
+    --cubic-bezier--1: cubic-bezier(0.175, 0.885, 0.32, 1.75);
+
+    --font-family--main: 'Montserrat';
+    --text-size--1: 10px;
+    --text-size--2: 12px;
+    --text-size--3: 14px;
+    --text-size--4: 18px;
+    --text-size--5: 16px;
+    --text-size--6: 56px;
+    --text-size--7: 18px;
+    --text-size--8: 20px;
+    --text-size--9: 24px;
+    --text-size--10: 24px;
+
+    @media screen and (min-width: var(--size--laptop)) {
+        --text-size--4: 18px;
+        --text-size--5: 20px;
+        --text-size--6: 24px;
+        --text-size--7: 28px;
+        --text-size--8: 24px;
+        --text-size--9: 26px;
+    }
+
+    @media screen and (min-width: var(--size--4k)) {
+        --text-size--1: 12px;
+        --text-size--2: 14px;
+        --text-size--3: 16px;
+        --text-size--4: 18px;
+        --text-size--5: 22px;
+        --text-size--6: 28px;
+        --text-size--7: 34px;
+    }
+
+    font-size: var(--text-size--3);
+
+}
+
 * {
     box-sizing: border-box;
     position: relative;

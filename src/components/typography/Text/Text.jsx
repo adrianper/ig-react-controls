@@ -16,7 +16,7 @@ const Text = forwardRef((props, ref) => {
         bold,
         disabled,
         ellipsis,
-        elipsisLines,
+        ellipsisLines,
         underline,
         className,
         color,
@@ -37,7 +37,7 @@ const Text = forwardRef((props, ref) => {
     if (underline) className += ' text--underline'
     if (ellipsis) {
         className += ' text--ellipsis'
-        style['WebkitLineClamp'] = elipsisLines
+        style['WebkitLineClamp'] = ellipsisLines
     }
 
     const tagProps = { className, style, ref }
@@ -62,11 +62,11 @@ Text.propTypes = {
     bold: PropTypes.bool,
     disabled: PropTypes.bool,
     ellipsis: PropTypes.bool,
-    elipsisLines: PropTypes.number,
+    ellipsisLines: PropTypes.number,
     underline: PropTypes.bool,
     className: PropTypes.string,
     color: PropTypes.string,
-    align: PropTypes.oneOf(['', 'left', 'center', 'right', 'justify']),
+    align: PropTypes.oneOf([undefined, 'left', 'center', 'right', 'justify']),
     variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'span', 'label']),
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
     style: PropTypes.object,
@@ -78,11 +78,11 @@ Text.defaultProps = {
     bold: false,
     disabled: false,
     ellipsis: false,
-    elipsisLines: 1,
+    ellipsisLines: 1,
     underline: false,
     className: undefined,
     color: 'first',
-    align: '',
+    align: undefined,
     variant: 'p',
     size: undefined,
     style: {},

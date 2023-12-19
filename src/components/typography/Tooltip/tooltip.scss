@@ -1,8 +1,6 @@
-@import 'styles/general/variables.scss';
-
 $tooltip--triangle--width: 0.5em;
 
-@mixin tooltip_triangle_style{
+@mixin tooltip_triangle_style {
     content: "";
     position: absolute;
     border-width: $tooltip--triangle--width;
@@ -13,7 +11,7 @@ $tooltip--triangle--width: 0.5em;
     display: 'flex';
 }
 
-.tooltip{
+.tooltip {
     background-color: var(--color--gray--6);
     color: var(--color--gray--2);
     border-radius: 0.5em;
@@ -24,47 +22,44 @@ $tooltip--triangle--width: 0.5em;
     display: none;
     box-shadow: var(--card--shadow);
     pointer-events: none;
-    
+
     &.tooltip--position--bottom::after {
         @include tooltip_triangle_style;
         bottom: 100%;
         left: 50%;
-        margin-left: calc( -1 * #{$tooltip--triangle--width});
+        margin-left: calc(-1 * #{$tooltip--triangle--width});
         border-color: transparent transparent var(--color--gray--6) transparent;
     }
-    
+
     &.tooltip--position--top::after {
         @include tooltip_triangle_style;
         top: 100%;
         left: 50%;
-        margin-left: calc( -1 * #{$tooltip--triangle--width});
-        border-color:var(--color--gray--6) transparent transparent transparent;
+        margin-left: calc(-1 * #{$tooltip--triangle--width});
+        border-color: var(--color--gray--6) transparent transparent transparent;
     }
-    
+
     &.tooltip--position--right::after {
         @include tooltip_triangle_style;
         top: 50%;
         right: 100%;
-        margin-top: calc( -1 * #{$tooltip--triangle--width});
+        margin-top: calc(-1 * #{$tooltip--triangle--width});
         border-color: transparent var(--color--gray--6) transparent transparent;
     }
-    
+
     &.tooltip--position--left::after {
         @include tooltip_triangle_style;
         top: 50%;
         left: 100%;
-        margin-top: calc( -1 * #{$tooltip--triangle--width});
+        margin-top: calc(-1 * #{$tooltip--triangle--width});
         border-color: transparent transparent transparent var(--color--gray--6);
     }
-    
-    
+
+
 }
 
-@media screen and (max-width: $size--tablet){
-    .tooltip{
+@media screen and (max-width: var(--size--tablet)) {
+    .tooltip {
         display: none !important;
     }
 }
-
-
-    

@@ -14,4 +14,5 @@ export { default as Divider } from './imagery/Divider/Divider.jsx'
 export { default as Icon } from './imagery/Icon/Icon.jsx'
 
 /** Typography */
+export { default as Link } from './typography/Link/Link.jsx'
 export { default as Text } from './typography/Text/Text.jsx'
