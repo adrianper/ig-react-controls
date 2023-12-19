@@ -14,9 +14,7 @@ const Link = (props) => {
         align,
         className,
         size,
-        regular,
-        medium,
-        bold,
+        weight,
         disabled,
         ellipsis,
         ellipsisLines,
@@ -37,9 +35,8 @@ const Link = (props) => {
     className += ' link'
     className += tp('size', size) + tp('align', align)
 
-    if (regular) className += ' text--regular'
-    if (medium) className += ' text--medium'
-    if (bold) className += ' text--bold'
+    className += ` text--${weight}`
+
     if (disabled) className += ' text--disabled'
     if (underline) className += ' text--underline'
     if (ellipsis) {
@@ -58,9 +55,7 @@ Link.propTypes = {
     align: PropTypes.oneOf([undefined, 'left', 'center', 'right', 'justify']),
     className: PropTypes.string,
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
-    regular: PropTypes.bool,
-    medium: PropTypes.bool,
-    bold: PropTypes.bool,
+    weight: PropTypes.oneOf(['thin', 'extra-light', 'light', 'regular', 'medium', 'semi-bold', 'bold', 'extra-bold', 'heavy']),
     disabled: PropTypes.bool,
     ellipsis: PropTypes.bool,
     ellipsisLines: PropTypes.number,
@@ -75,6 +70,7 @@ Link.defaultProps = {
     align: undefined,
     className: undefined,
     size: undefined,
+    weight: 'regular',
     regular: false,
     medium: false,
     bold: false,

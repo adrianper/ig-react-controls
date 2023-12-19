@@ -1,7 +1,6 @@
 /** @type { import('@storybook/react').Preview } */
 import './general.scss'
 import './color_variables.scss'
-import './filter_variables.scss'
 
 const preview = {
   parameters: {

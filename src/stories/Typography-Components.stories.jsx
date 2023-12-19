@@ -18,7 +18,7 @@ export default {
 const TyphographyExample = (props) => {
 
     return (
-        <Grid gap='10px'>
+        <Grid gap='5px'>
             <Text {...props}>Text</Text>
             <Link {...props}>Link</Link>
         </Grid>

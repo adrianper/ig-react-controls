@@ -11,9 +11,7 @@ const tp = (propName, prop) => {
 const Text = forwardRef((props, ref) => {
     let {
         size,
-        regular,
-        medium,
-        bold,
+        weight,
         disabled,
         ellipsis,
         ellipsisLines,
@@ -30,9 +28,9 @@ const Text = forwardRef((props, ref) => {
     className += tp('size', size)
     className += tp('align', align)
     className += tp('color', color)
-    if (regular) className += ' text--regular'
-    if (medium) className += ' text--medium'
-    if (bold) className += ' text--bold'
+
+    className += ` text--${weight}`
+
     if (disabled) className += ' text--disabled'
     if (underline) className += ' text--underline'
     if (ellipsis) {
@@ -57,9 +55,7 @@ const Text = forwardRef((props, ref) => {
 })
 
 Text.propTypes = {
-    regular: PropTypes.bool,
-    medium: PropTypes.bool,
-    bold: PropTypes.bool,
+    weight: PropTypes.oneOf(['thin', 'extra-light', 'light', 'regular', 'medium', 'semi-bold', 'bold', 'extra-bold', 'heavy']),
     disabled: PropTypes.bool,
     ellipsis: PropTypes.bool,
     ellipsisLines: PropTypes.number,
@@ -73,9 +69,7 @@ Text.propTypes = {
 }
 
 Text.defaultProps = {
-    regular: false,
-    medium: false,
-    bold: false,
+    weight: 'regular',
     disabled: false,
     ellipsis: false,
     ellipsisLines: 1,

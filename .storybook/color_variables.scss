@@ -5,6 +5,26 @@
 }
 
 body {
+    /*-----------------------------FILTERS-------------------------------*/
+    --filter--none: none;
+    --filter--green--1: invert(60%) sepia(42%) saturate(4333%) hue-rotate(99deg) brightness(104%) contrast(72%);
+    --filter--green--2: invert(74%) sepia(32%) saturate(5911%) hue-rotate(61deg) brightness(102%) contrast(114%);
+    --filter--green--3: invert(88%) sepia(6%) saturate(2552%) hue-rotate(60deg) brightness(131%) contrast(110%);
+    --filter--green--4: invert(91%) sepia(14%) saturate(1148%) hue-rotate(43deg) brightness(103%) contrast(101%);
+    --filter--black--2: invert(22%) sepia(6%) saturate(230%) hue-rotate(227deg) brightness(94%) contrast(85%);
+    --filter--gray--1: invert(29%) sepia(6%) saturate(10%) hue-rotate(326deg) brightness(96%) contrast(90%);
+    --filter--gray--2: invert(41%) sepia(92%) saturate(0%) hue-rotate(169deg) brightness(89%) contrast(85%);
+    --filter--gray--3: invert(70%) sepia(4%) saturate(238%) hue-rotate(211deg) brightness(87%) contrast(91%);
+    --filter--gray--4: invert(82%) sepia(6%) saturate(28%) hue-rotate(71deg) brightness(90%) contrast(87%);
+    --filter--gray--5: invert(79%) sepia(4%) saturate(220%) hue-rotate(193deg) brightness(100%) contrast(91%);
+    --filter--gray--6: invert(95%) sepia(8%) saturate(14%) hue-rotate(201deg) brightness(92%) contrast(90%);
+    --filter--white--1: invert(98%) sepia(8%) saturate(16%) hue-rotate(329deg) brightness(104%) contrast(100%);
+    --filter--white--2: invert(99%) sepia(45%) saturate(342%) hue-rotate(194deg) brightness(119%) contrast(90%);
+    --filter--blue--1: invert(38%) sepia(84%) saturate(1045%) hue-rotate(172deg) brightness(95%) contrast(106%);
+    --filter--blue--7: invert(33%) sepia(67%) saturate(3256%) hue-rotate(205deg) brightness(99%) contrast(104%);
+    --filter--red--1: invert(24%) sepia(93%) saturate(7097%) hue-rotate(2deg) brightness(102%) contrast(125%);
+    --filter--yellow--1: invert(79%) sepia(64%) saturate(2632%) hue-rotate(3deg) brightness(110%) contrast(108%);
+
     // ----------------------CUSTOM COLORS-------------------
     --color--green--1: #24BD58;
     --color--green--2: #39e600;
@@ -81,6 +101,9 @@ body {
 }
 
 body.dark {
+    /*-----------------------------FILTERS-------------------------------*/
+    --filter--gray--2: var(--filter--white--1);
+
     /*-----------------------------COMPONENT SETTINGS-------------------------------*/
     --shadow--color: rgba(51, 51, 51, 1); //shadow effect
     --card--shadow: 0px 0px 6px 2px var(--shadow--color);
