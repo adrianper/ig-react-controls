@@ -15,6 +15,7 @@ export { default as Icon } from './imagery/Icon/Icon.jsx'
 
 /** Inputs */
 export { default as CharacterField } from './inputs/CharacterField/CharacterField.jsx'
+export { default as TextField } from './inputs/TextField/TextField.jsx'
 
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'

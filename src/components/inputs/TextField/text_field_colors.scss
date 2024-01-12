@@ -1,0 +1,47 @@
+.text_field_container {
+    .text_field__input {
+        color: var(--component--text-color);
+    }
+
+    /*---------------STATUSES---------------------*/
+    &.text_field--status--normal {
+        .text_field__label {
+            color: var(--component--label-color--inactive);
+            height: 2rem;
+        }
+
+        .text_field .text_field__fieldset {
+            border-color: var(--component--color--inactive);
+        }
+
+        &.focused {
+            .text_field__label {
+                color: var(--component--color--active);
+            }
+
+            .text_field .text_field__fieldset {
+                border-color: var(--component--color--active);
+            }
+        }
+    }
+
+    &.text_field--status--error {
+        .text_field__label {
+            color: var(--color--red--1);
+        }
+
+        .text_field .text_field__fieldset {
+            border-color: var(--color--red--1);
+        }
+
+        // &.focused {
+        //     .text_field__label {
+        //         color: var(--color--red--1);
+        //     }
+
+        //     .text_field .text_field__fieldset {
+        //         border-color: var(--color--red--1);
+        //     }
+        // }
+    }
+}
