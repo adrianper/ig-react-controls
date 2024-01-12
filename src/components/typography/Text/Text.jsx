@@ -62,7 +62,7 @@ Text.propTypes = {
     underline: PropTypes.bool,
     className: PropTypes.string,
     color: PropTypes.string,
-    align: PropTypes.oneOf([undefined, 'left', 'center', 'right', 'justify']),
+    align: PropTypes.oneOf([PropTypes.null, 'left', 'center', 'right', 'justify']),
     variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'span', 'label']),
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
     style: PropTypes.object,
