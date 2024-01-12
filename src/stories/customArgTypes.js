@@ -23,9 +23,14 @@ export const customArgTypes = {
         control: 'text',
         table: customTableDefaults.string
     },
+    onChange: {
+        control: 'none',
+        description: 'Input `onChange` event',
+        table: { type: { summary: 'function' }, defaultValue: { summary: 'undefined' } }
+    },
     onClick: {
         control: 'none',
-        description: 'Button `onClick` event',
+        description: 'Element `onClick` event',
         table: { type: { summary: 'function' }, defaultValue: { summary: 'undefined' } }
     },
     padding: {
