@@ -11,11 +11,10 @@ const cursorToEnd = () => { document.activeElement.setSelectionRange(1, 1) }
 
 const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
     //--------------------PROPS--------------------
-    let { className = '' } = props
+    let { className, initValue, } = props
     const {
         length,
         label,
-        initValue,
         // pattern,
         onChange,
         lblAlign,
@@ -25,7 +24,7 @@ const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
     const lengthArray = useMemo(() => generateArray(length), [length])
 
     //--------------------STATE--------------------
-    const [value, setValue] = useState(initValue.split('', length))
+    const [value, setValue] = useState(initValue.padEnd(length, 'x').split('', length))
 
     //--------------------REF--------------------
     const inputsRef = useRef(lengthArray.map(() => createRef()))
@@ -150,10 +149,13 @@ const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
     //--------------------EFFECT--------------------
     useEffect(() => {
         if (initValue !== '') {
+            if (initValue.length < length) {
+                initValue = initValue.padEnd(length, 'x')
+            }
             inputsRef.current.forEach((ref, i) => {
-                ref.current.value = initValue[i] || 'x'
+                ref.current.value = initValue[i]
             })
-            onChange(initValue.length < length ? initValue.padEnd(length, 'x').split('') : initValue.split('', length))
+            onChange(initValue.split('', length))
         }
     }, [initValue, length, onChange])
 
