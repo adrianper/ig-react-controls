@@ -1,0 +1,23 @@
+.character_field_container {
+    .character_input {
+        color: var(--component--text-color);
+        font-weight: 500;
+    }
+
+    &.status--normal {
+
+        .character_input {
+            border-color: var(--component--color--inactive);
+
+            &:focus {
+                border-color: var(--component--color--active);
+            }
+        }
+    }
+
+    &.status--error {
+        .character_input {
+            border-color: var(--color--red--1);
+        }
+    }
+}

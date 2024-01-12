@@ -1,0 +1,42 @@
+@import './character_field_colors.scss';
+
+
+.character_field {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.58em;
+    justify-content: center;
+    width: 100%;
+
+
+    .character_input {
+        display: grid;
+        gap: 1.75em;
+        width: 46px;
+        height: 46px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0.58em;
+        outline: none;
+        text-align: center;
+        font-size: var(--text-size--3);
+        background: none;
+    }
+}
+
+@media screen and (min-width: var(--size--laptop)) {
+    .character_field {
+        .character_input {
+            width: 34px;
+            height: 34px;
+        }
+    }
+}
+
+// @media only screen and (max-width: var(--size--tablet)){
+//     .character_field {
+//         .character_input {
+//             padding: 0.6em;
+//         }
+//     }
+// }

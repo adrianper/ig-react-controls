@@ -13,6 +13,9 @@ export { default as Slider } from './containers/Slider/Slider.jsx'
 export { default as Divider } from './imagery/Divider/Divider.jsx'
 export { default as Icon } from './imagery/Icon/Icon.jsx'
 
+/** Inputs */
+export { default as CharacterField } from './inputs/CharacterField/CharacterField.jsx'
+
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'
 export { default as Text } from './typography/Text/Text.jsx'
