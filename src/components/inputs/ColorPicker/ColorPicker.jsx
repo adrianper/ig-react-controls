@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 import { Grid, TextField } from '../../'
-import regexDictionary from '../../../utl/scripts/regexDictionary'
+import regexDictionary from '../../../utils/scripts/regexDictionary'
 
 import './color_picker.scss'
 
