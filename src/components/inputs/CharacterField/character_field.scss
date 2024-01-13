@@ -4,19 +4,18 @@
 .character_field {
     display: grid;
     grid-auto-flow: column;
-    gap: 0.58em;
+    gap: 8px;
     justify-content: center;
     width: 100%;
 
 
     .character_input {
-        display: grid;
-        gap: 1.75em;
+        display: flex;
         width: 46px;
         height: 46px;
         border-width: 1px;
         border-style: solid;
-        border-radius: 0.58em;
+        border-radius: 10px;
         outline: none;
         text-align: center;
         font-size: var(--text-size--3);

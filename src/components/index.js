@@ -16,8 +16,11 @@ export { default as Icon } from './imagery/Icon/Icon.jsx'
 /** Inputs */
 export { default as CharacterField } from './inputs/CharacterField/CharacterField.jsx'
 export { default as ColorPicker } from './inputs/ColorPicker/ColorPicker.jsx'
+export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'
 export { default as TextField } from './inputs/TextField/TextField.jsx'
 
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'
 export { default as Text } from './typography/Text/Text.jsx'
+
+export { default as ComboBoxExample } from './inputs/ComboBox/ComboBoxExample.jsx'
