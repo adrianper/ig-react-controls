@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { TextField } from '../components';
+import { ColorPicker } from '../components';
 import { customArgTypes } from './customArgTypes';
 
 // const variants = { 'filled': 'filled', 'filled--danger': 'filled--danger', 'outlined': 'outlined', 'outlined--danger': 'outlined--danger' };
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Inputs/TextField',
-    component: TextField,
+    title: 'Inputs/ColorPicker',
+    component: ColorPicker,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
@@ -17,29 +17,23 @@ export default {
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
-        className: customArgTypes.className,
-        ref: customArgTypes.ref,
+        value: { control: 'none' },
         onChange: customArgTypes.onChange,
-        onBlur: { control: 'none' },
-        onFocus: { control: 'none' },
-        onValidate: { control: 'none' },
-        rest: {
+        textFieldProps: {
             control: 'none',
-            description: 'Object of `input` accepted properties',
-            table: { type: { summary: 'object' }, defaultValue: { summary: 'undefined' } }
-        }
+            description: 'Object of `TextField` accepted properties',
+            table: { type: { summary: 'object' }, defaultValue: { summary: '{ }' } }
+        },
+        ref: customArgTypes.ref,
     },
 }
 
-export const Example = {
-    args: {
-        className: 'custom_textfield',
-        type: 'email',
-        label: 'Email',
-    },
-    render: (args) => {
-        const [value, setValue] = useState('')
+const ColorPickerExample = () => {
+    const [color, setColor] = useState('#ffb1b2')
 
-        return <TextField {...{ value, onChange: setValue, ...args }} data-some-property={'asdasd'} />
-    }
+    return <ColorPicker value={color} onChange={setColor} />
+}
+
+export const Example = {
+    render: ColorPickerExample
 }

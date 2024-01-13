@@ -1,5 +1,5 @@
 export const customTableDefaults = {
-    string: { type: { summary: 'string' }, defaultValue: { summary: '' } },
+    string: { type: { summary: 'string' }, defaultValue: { summary: "''" } },
     bool: { type: { summary: 'bool' }, defaultValue: { summary: 'false' } },
 }
 

@@ -107,7 +107,6 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
             <div className='text_field'>
                 <input
                     type={type}
-                    autoComplete="new-password"
                     min={1}
                     ref={inputRef}
                     className='text_field__input'
@@ -129,10 +128,10 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
 })
 
 TextFieldComponent.propTypes = {
-    className: PropTypes.string,
+    className: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     label: PropTypes.string,
     type: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     padding: PropTypes.string,
     margin: PropTypes.string,
@@ -144,7 +143,7 @@ TextFieldComponent.propTypes = {
     pattern: PropTypes.string,
     errorMessage: PropTypes.string,
     onBlur: PropTypes.func,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
     onFocus: PropTypes.func,
     onValidate: PropTypes.func,
     maxLength: PropTypes.number,

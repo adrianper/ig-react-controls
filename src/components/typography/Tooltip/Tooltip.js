@@ -57,7 +57,7 @@ export default memo ( function Tooltip (props) {
             <div ref={node} onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc} className={containerClassName}>
                 {children}
                 <Text className={`tooltip ${tooltipClassName} tooltip--position--${position}`} size={size} 
-                    align="center" maxWidth={tooltipMaxWidth} ref={tooltip} style={style}>
+                    align='center' maxWidth={tooltipMaxWidth} ref={tooltip} style={style}>
                     
                     {text}
                 </Text>
