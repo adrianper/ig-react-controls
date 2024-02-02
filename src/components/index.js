@@ -18,6 +18,7 @@ export { default as CharacterField } from './inputs/CharacterField/CharacterFiel
 export { default as ColorPicker } from './inputs/ColorPicker/ColorPicker.jsx'
 export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'
 export { default as TextField } from './inputs/TextField/TextField.jsx'
+export { default as RadioButton } from './inputs/RadioButton/RadioButton.jsx'
 
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'

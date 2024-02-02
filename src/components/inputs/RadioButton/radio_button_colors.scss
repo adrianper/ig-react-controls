@@ -1,0 +1,17 @@
+.radio_button {
+    .radio_button__input {
+        border: 2px solid var(--component--color--inactive);
+
+        &.checked {
+            border-color: var(--component--color);
+
+            .radio_button__circle {
+                background-color: var(--component--color);
+            }
+        }
+
+        .radio_button__circle {
+            background-color: var(--component--color--inactive);
+        }
+    }
+}
