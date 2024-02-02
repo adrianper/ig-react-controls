@@ -97,7 +97,7 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
     }), [padding, margin, w100, h100, maxWidth, style])
 
     if (!label) className += ' no_label'
-    if (value || focused) className += ' label_up'
+    if (value || value === 0 || focused) className += ' label_up'
     if (focused) className += ' focused'
     className += ` text_field--status--${status}`
 

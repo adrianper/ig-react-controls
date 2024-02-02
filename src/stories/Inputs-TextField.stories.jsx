@@ -23,6 +23,9 @@ export default {
         onBlur: { control: 'none' },
         onFocus: { control: 'none' },
         onValidate: { control: 'none' },
+        value: {
+            control: 'none',
+        },
         rest: {
             control: 'none',
             description: 'Object of `input` accepted properties',
@@ -40,6 +43,6 @@ export const Example = {
     render: (args) => {
         const [value, setValue] = useState('')
 
-        return <TextField {...{ value, onChange: setValue, ...args }} data-some-property={'asdasd'} />
+        return <TextField {...{ ...args, value, onChange: setValue }} data-some-property={'some-value'} />
     }
 }
