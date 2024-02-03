@@ -29,6 +29,8 @@
     /*--------------------------------------LIST---------------------------------------*/
     .combobox__list {
         position: fixed;
+        // position: absolute;
+        display: none;
         padding: 0;
         margin: 0;
         overflow: hidden;
@@ -36,13 +38,14 @@
         z-index: var(--index--combobox_list);
         box-shadow: var(--card--shadow);
         border-radius: 0.5rem;
-        animation: ComboBoxListAnimationOpen 0.3s;
         max-height: 20rem;
 
-        // position: absolute;
+        &--open {
+            display: block;
+        }
 
         // &.top {
-        //     bottom: 100%;
+        //     bottom: calc(100% + 8px);
         // }
 
         // &.bottom {
@@ -56,14 +59,6 @@
         // &.left {
         //     left: 0
         // }
-    }
-
-    .combobox__list--invisible {
-        border-width: 0;
-        animation: ComboBoxListAnimationClose 0.3s;
-        max-height: 0;
-        overflow: hidden;
-        box-shadow: none;
     }
 
     /*-----------------------------OPTIONS----------------------------------*/
@@ -99,7 +94,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        transform: translate(1.5rem, 1rem);
+        transform: translate(1.3rem, 0.85rem);
         transition: font-size 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, max-width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
         z-index: 1;
         pointer-events: none;
@@ -171,32 +166,5 @@
             line-height: 1rem;
             transform: translate(1rem, 0.8rem);
         }
-    }
-}
-
-/*------------------------------ANIMATIONS---------------------------------------*/
-@keyframes ComboBoxListAnimationOpen {
-    0% {
-        max-height: 0;
-    }
-
-    100% {
-        max-height: 20rem;
-    }
-}
-
-@keyframes ComboBoxListAnimationClose {
-    0% {
-        max-height: 20rem;
-        border-width: 2px;
-    }
-
-    99% {
-        border-width: 2px;
-    }
-
-    100% {
-        max-height: 0;
-        border-width: 0;
     }
 }

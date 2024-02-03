@@ -38,7 +38,7 @@ const RadioButton = (props) => {
     )
 }
 
-RadioButton.PropTypes = {
+RadioButton.propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
     gap: PropTypes.string,

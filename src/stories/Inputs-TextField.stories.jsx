@@ -43,6 +43,8 @@ export const Example = {
     render: (args) => {
         const [value, setValue] = useState('')
 
-        return <TextField {...{ ...args, value, onChange: setValue }} data-some-property={'some-value'} />
+        return <div style={{ width: '100vw', maxWidth: '200px', minHeight: '200px' }}>
+            <TextField {...{ ...args, value, onChange: setValue }} data-some-property={'some-value'} />
+        </div>
     }
 }

@@ -34,7 +34,9 @@ const citiesObj = {
 const ComboBoxExample = (props) => {
     const [city, setCity] = useState('')
 
-    return <ComboBox options={citiesObj} value={city} onChange={setCity} {...props} />
+    return <div style={{ width: '100vw', maxWidth: '200px', minHeight: '250px' }}>
+        <ComboBox floatingLabel nullValue label='City' options={citiesObj} {...{ ...props, value: city, onChange: setCity }} />
+    </div>
 }
 
 export const Example = {

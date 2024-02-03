@@ -17,12 +17,15 @@ export { default as Icon } from './imagery/Icon/Icon.jsx'
 export { default as CharacterField } from './inputs/CharacterField/CharacterField.jsx'
 export { default as ColorPicker } from './inputs/ColorPicker/ColorPicker.jsx'
 export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'
-export { default as TextField } from './inputs/TextField/TextField.jsx'
 export { default as RadioButton } from './inputs/RadioButton/RadioButton.jsx'
+export { default as SearchBox } from './inputs/SearchBox/SearchBox.jsx'
+export { default as TextField } from './inputs/TextField/TextField.jsx'
 
 /** Loading */
 export { default as Spinner } from './loading/Spinner/Spinner.jsx'
 
+/** Misc */
+export { default as Portal } from './misc/Portal/Portal.jsx'
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'
 export { default as Text } from './typography/Text/Text.jsx'

@@ -23,7 +23,7 @@ const Spinner = (props) => {
     )
 }
 
-Spinner.PropTypes = {
+Spinner.propTypes = {
     appSpinner: PropTypes.bool,
     isLoading: PropTypes.bool,
 }

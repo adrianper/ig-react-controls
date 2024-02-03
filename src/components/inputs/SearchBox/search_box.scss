@@ -1,0 +1,49 @@
+@import './search_box_colors.scss';
+
+.search_box {
+    .search_box__list {
+        display: none;
+        // display: grid;
+        // position: absolute;
+        position: fixed;
+        align-content: start;
+        z-index: var(--index--combobox_list);
+        overflow-x: hidden;
+
+        border-radius: 0.5em;
+        box-shadow: var(--card--shadow);
+        visibility: hidden;
+
+        &--open {
+            display: grid;
+            min-height: 7em;
+            max-height: 20em;
+            visibility: visible;
+        }
+
+        // &.top {
+        //     bottom: calc(100% + 8px);
+        // }
+
+        // &.bottom {
+        //     top: 100%
+        // }
+
+        // &.right {
+        //     right: 0;
+        // }
+
+        // &.left {
+        //     left: 0
+        // }
+
+        .search_box__option {
+            display: grid;
+            gap: 0.5em;
+            cursor: pointer;
+            list-style: none;
+            padding: 0.6em 0.8em;
+            user-select: none;
+        }
+    }
+}

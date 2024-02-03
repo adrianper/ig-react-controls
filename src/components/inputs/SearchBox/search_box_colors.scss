@@ -1,0 +1,25 @@
+.search_box__list {
+    background-color: rgb(var(--app--bg--color));
+
+    .search_box__option {
+        color: var(--component--text-color);
+
+        &:hover {
+            background-color: var(--component--option--bg-color--hover);
+        }
+
+        &--selected {
+            color: var(--component--color) !important;
+        }
+    }
+}
+
+.dark {
+    .search_box__list {
+        .search_box__option {
+            &:hover {
+                color: var(--component--color);
+            }
+        }
+    }
+}
