@@ -1,0 +1,52 @@
+@import './spinner_colors.scss';
+
+.loading_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: var(--index--loading);
+
+    &.app_spinner {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .circle {
+        padding: 1rem;
+        border-style: solid;
+        border-width: 0.6rem;
+        border-radius: 50%;
+        animation: rotate linear infinite 0.6s;
+    }
+
+    .loading-icon {
+        font-size: 2.8rem;
+        // animation: rotateNstop 0.6s infinite;
+        animation: rotate linear infinite 1s;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateNstop {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}

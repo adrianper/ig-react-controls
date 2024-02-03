@@ -1,0 +1,10 @@
+.loading_container {
+    background-color: rgba(var(--app--bg--color), 0.6);
+
+    .circle {
+        border-color: var(--component--color--active) var(--color--gray--3) var(--component--color--active) var(--component--color--active);
+    }
+    .loading-icon {
+        color: var(--component--color--active);
+    }
+}

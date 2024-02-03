@@ -20,6 +20,9 @@ export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'
 export { default as TextField } from './inputs/TextField/TextField.jsx'
 export { default as RadioButton } from './inputs/RadioButton/RadioButton.jsx'
 
+/** Loading */
+export { default as Spinner } from './loading/Spinner/Spinner.jsx'
+
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'
 export { default as Text } from './typography/Text/Text.jsx'
