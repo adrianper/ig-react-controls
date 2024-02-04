@@ -47,12 +47,14 @@ const Toggle = (props) => {
 }
 
 Toggle.propTypes = {
+    className: PropTypes.string,
     value: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
     alwaysActive: PropTypes.bool,
 }
 
 Toggle.defaultProps = {
+    className: undefined,
     value: false,
     onChange: undefined,
     alwaysActive: false,

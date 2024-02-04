@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 
 import { Grid, Text } from '../../'
 
+import { MdOutlineRadioButtonChecked, MdOutlineRadioButtonUnchecked } from "react-icons/md";
+
 import './radio_button.scss'
 import './radio_button_colors.scss'
 
@@ -16,7 +18,7 @@ const RadioButton = (props) => {
         templateRows,
         direction,
         inputs,
-        likert,
+        // likert,
         containerStyle,
     } = props
 
@@ -26,11 +28,16 @@ const RadioButton = (props) => {
                 Object.keys(inputs).map(inputName => (
                     <Fragment key={inputName}>
                         {inputs[inputName] && <Text>{inputs[inputName]}</Text>}
-                        <div
+                        {value === inputName ?
+                            <MdOutlineRadioButtonChecked className='react_icon on' onClick={() => onChange(inputName)} />
+                            :
+                            <MdOutlineRadioButtonUnchecked className='react_icon off' onClick={() => onChange(inputName)} />
+                        }
+                        {/* <div
                             className={`radio_button__input${value === inputName ? ' checked' : ''}`}
                             onClick={() => onChange(inputName)}>
                             <div className={`radio_button__circle${likert ? ` size__${Math.abs(inputName) + 1}` : ''}`} />
-                        </div >
+                        </div> */}
                     </Fragment >
                 ))
             }
@@ -39,6 +46,7 @@ const RadioButton = (props) => {
 }
 
 RadioButton.propTypes = {
+    className: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
     gap: PropTypes.string,
@@ -46,11 +54,12 @@ RadioButton.propTypes = {
     templateRows: PropTypes.string,
     direction: PropTypes.oneOf(['row', 'column']),
     inputs: PropTypes.object,
-    likert: PropTypes.bool,
+    // likert: PropTypes.bool,
     containerStyle: PropTypes.object,
 }
 
 RadioButton.defaultProps = {
+    className: undefined,
     value: '',
     onChange: undefined,
     gap: '1rem',
@@ -58,7 +67,7 @@ RadioButton.defaultProps = {
     templateRows: '',
     direction: 'row',
     inputs: {},
-    likert: false,
+    // likert: false,
     containerStyle: {},
 }
 
