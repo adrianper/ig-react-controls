@@ -1,0 +1,26 @@
+.checkbox {
+    display: grid;
+    align-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    user-select: none;
+
+    .react_icon {
+        opacity: 1;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+
+        &.on {
+            color: var(--component--color);
+        }
+
+        &.off {
+            color: var(--component--color--inactive);
+        }
+    }
+}
