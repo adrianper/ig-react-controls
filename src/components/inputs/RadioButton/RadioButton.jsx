@@ -23,11 +23,11 @@ const RadioButton = (props) => {
     } = props
 
     return (
-        <Grid itemsX='center' itemsY='center' className='radio_button' direction={direction} gap={gap} columns={templateColumns} rows={templateRows} style={containerStyle}>
+        <Grid itemsX='center' itemsY='center' className='radio_button_container' direction={direction} gap={gap} columns={templateColumns} rows={templateRows} style={containerStyle}>
             {
                 Object.keys(inputs).map(inputName => (
                     <Fragment key={inputName}>
-                        {inputs[inputName] && <Text>{inputs[inputName]}</Text>}
+                        {inputs[inputName] && <Text onClick={() => onChange(inputName)}>{inputs[inputName]}</Text>}
                         {value === inputName ?
                             <MdOutlineRadioButtonChecked className='react_icon on' onClick={() => onChange(inputName)} />
                             :

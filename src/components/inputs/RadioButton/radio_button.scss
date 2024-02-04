@@ -1,45 +1,48 @@
 $radioSize: 16px;
 $radioMargin: 6px;
 
-.radio_button {
-    cursor: pointer;
-    .react_icon {
-        font-size: 32px;
+.radio_button_container {
+    // .radio_button {
+        cursor: pointer;
 
-        &.on {
-            color: var(--component--color);
+        .react_icon {
+            font-size: 32px;
+
+            &.on {
+                color: var(--component--color);
+            }
+
+            &.off {
+                color: var(--component--color--inactive);
+            }
         }
 
-        &.off {
-            color: var(--component--color--inactive);
-        }
-    }
+        // .radio_button__input {
+        //     display: flex;
+        //     width: fit-content;
+        //     height: fit-content;
+        //     border-radius: 50%;
+        //     cursor: pointer;
 
-    // .radio_button__input {
-    //     display: flex;
-    //     width: fit-content;
-    //     height: fit-content;
-    //     border-radius: 50%;
-    //     cursor: pointer;
-
-    //     &.checked {
-    //         .radio_button__circle {
-    //             visibility: visible;
-    //         }
-    //     }
-    //     .radio_button__circle {
-    //         width: $radioSize;
-    //         height: $radioSize;
-    //         margin: $radioMargin;
-    //         border-radius: 50%;
-    //         visibility: hidden;
-    //         @each $size in 2, 3, 4 {
-    //             &.size__#{$size} {
-    //                 width: calc($radioSize + ($radioSize/3)*($size - 1));
-    //                 height: calc($radioSize + ($radioSize/3)*($size - 1));
-    //                 // margin: calc(#{$radioMargin} + #{$size - 1}px);
-    //             }
-    //         }
-    //     }
+        //     &.checked {
+        //         .radio_button__circle {
+        //             visibility: visible;
+        //         }
+        //     }
+        //     .radio_button__circle {
+        //         width: $radioSize;
+        //         height: $radioSize;
+        //         margin: $radioMargin;
+        //         border-radius: 50%;
+        //         visibility: hidden;
+        //         @each $size in 2, 3, 4 {
+        //             &.size__#{$size} {
+        //                 width: calc($radioSize + ($radioSize/3)*($size - 1));
+        //                 height: calc($radioSize + ($radioSize/3)*($size - 1));
+        //                 // margin: calc(#{$radioMargin} + #{$size - 1}px);
+        //             }
+        //         }
+        //     }
+        // }
     // }
 }
