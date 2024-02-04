@@ -1,0 +1,17 @@
+.toggle_switch {
+    .toggle_switch__switch {
+        background-color: var(--color--gray--5);
+
+        .toggle_switch__slider {
+            background-color: rgb(var(--app--bg--color));
+        }
+
+        &.active {
+            background-color: var(--component--color);
+        }
+    }
+
+    &.not_inactive .toggle_switch__switch {
+        background-color: var(--component--color);
+    }
+}

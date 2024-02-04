@@ -20,6 +20,7 @@ export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'
 export { default as RadioButton } from './inputs/RadioButton/RadioButton.jsx'
 export { default as SearchBox } from './inputs/SearchBox/SearchBox.jsx'
 export { default as TextField } from './inputs/TextField/TextField.jsx'
+export { default as Toggle } from './inputs/Toggle/Toggle.jsx'
 
 /** Loading */
 export { default as Spinner } from './loading/Spinner/Spinner.jsx'
