@@ -2,7 +2,7 @@ import React, { memo, Children } from 'react'
 import PropTypes from 'prop-types'
 import reactFastCompare from 'react-fast-compare'
 
-import { Flex, Grid } from '../../'
+import { Flex, Grid } from '../../index'
 
 import './slider.scss'
 

@@ -2,7 +2,7 @@ import React, { createRef, forwardRef, memo, useCallback, useEffect, useImperati
 import PropTypes from 'prop-types'
 import reactFastCompare from 'react-fast-compare'
 
-import { Grid, Text } from '../../'
+import { Grid, Text } from '../../index'
 import './character_field.scss'
 
 const generateArray = length => [...Array(length).keys()]

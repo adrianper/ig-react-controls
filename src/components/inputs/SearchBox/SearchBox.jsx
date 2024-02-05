@@ -9,7 +9,7 @@ import { useClickOutside, useScrollOutside } from '../../../hooks'
 //import customHooks
 //import context/providers
 
-import { TextField } from '../../'
+import { TextField } from '../../index'
 
 //redux-actions
 

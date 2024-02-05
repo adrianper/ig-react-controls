@@ -2,7 +2,7 @@
   "name": "ig-react-controls",
   "version": "1.0.0",
   "description": "InteliGene React Controls",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",

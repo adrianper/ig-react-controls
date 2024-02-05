@@ -8,10 +8,7 @@
     transform-origin: center;
     transition: transform 0.2s;
 
-    @each $align in 0,
-    90,
-    180,
-    270 {
+    @each $align in 0, 90, 180, 270 {
         &.rotate--#{$align} {
             transform: rotate(#{$align}deg),
         }

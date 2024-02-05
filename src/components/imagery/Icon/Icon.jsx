@@ -26,7 +26,7 @@ const Icon = (props) => {
     className += icon !== '' ? ` icon--${icon}` : ''
     className += ` ${calcRotation(direction)}`
 
-    if (filter !== '') style['filter'] = `var(--filter--${filter})`
+    if (filter) style['filter'] = `var(--filter--${filter})`
 
     const styleSpan = {
         width: `${size}rem`,

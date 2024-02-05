@@ -8,7 +8,7 @@ import React, { } from 'react'
 //impoty context/providers
 
 //import components
-import { Portal, Spinner, Text } from '../../'
+import { Spinner, Text } from '../../index'
 
 //redux-actions
 

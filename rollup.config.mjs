@@ -1,5 +1,5 @@
 
-// import resolve from '@rollup/plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 import external from 'rollup-plugin-peer-deps-external'
 import terser from '@rollup/plugin-terser';
 import scss from 'rollup-plugin-scss'
@@ -24,7 +24,7 @@ export default {
             // sourcemap: 'inline',
             // inlineDynamicImports: true,
             globals: {
-                // "react/jsx-runtime": "jsxRuntime",
+                "react/jsx-runtime": "jsxRuntime",
                 "react-dom/client": "ReactDOM",
                 "react": "React",
             },
@@ -42,10 +42,13 @@ export default {
     ],
     plugins: [
         // json(),
-        // resolve(),
-        // sass(),
         external(),
+        resolve({
+            extensions: ['.js', '.jsx']
+        }),
+        // sass(),
         scss({
+            // exclude: ['node_modules/**'],
             fileName: 'index.css',
             failOnError: true,
             // outputStyle: 'compressed'

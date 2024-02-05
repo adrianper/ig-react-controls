@@ -2,7 +2,7 @@ import React, { Fragment, memo } from 'react'
 import reactFastCompare from 'react-fast-compare'
 import PropTypes from 'prop-types'
 
-import { Grid, Text } from '../../'
+import { Grid, Text } from '../../index'
 
 import { MdOutlineRadioButtonChecked, MdOutlineRadioButtonUnchecked } from "react-icons/md";
 

@@ -1,7 +1,7 @@
 import React, { cloneElement, isValidElement, memo } from 'react'
 import reactFastCompare from 'react-fast-compare'
 
-import { Icon, Text } from '../../'
+import { Icon, Text } from '../../index'
 
 const AccordionLayout = (props) => {
     const {

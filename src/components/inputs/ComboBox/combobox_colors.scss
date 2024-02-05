@@ -29,9 +29,9 @@
             filter: var(--filter--inactive);
         }
 
-        .combobox__label {
+        .combobox__label,
+        .combobox__arrow_btn {
             color: var(--component--label-color--inactive);
-            font-weight: 500;
         }
 
         .combobox__fieldset {
@@ -43,7 +43,8 @@
                 filter: var(--filter--active);
             }
 
-            .combobox__label {
+            .combobox__label,
+            .combobox__arrow_btn {
                 color: var(--component--color--active);
             }
 
@@ -58,7 +59,8 @@
             filter: var(--filter--red--1);
         }
 
-        .combobox__label {
+        .combobox__label,
+        .combobox__arrow_btn {
             color: var(--color--red--1);
         }
 

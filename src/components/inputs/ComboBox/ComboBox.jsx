@@ -5,7 +5,9 @@ import reactFastCompare from 'react-fast-compare'
 import _$ from 'jquery'
 
 import { useClickOutside, useScrollOutside } from '../../../utils/hooks'
-import { Grid, Text, Icon } from '../../'
+import { Grid, Text/*, Icon*/ } from '../../index'
+
+import { IoIosArrowDown } from "react-icons/io";
 
 import ComboBoxList from './ComboBox__List'
 
@@ -129,7 +131,10 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
                 contentY='center' itemsY='center' direction='column' gap='1rem' columns='1fr auto'
                 onFocus={handleFocus} onBlur={handleBlur}>
                 <Text className='combobox__text'>{text}</Text>
-                <Icon icon='arrow' className='combobox__arrow' direction='right' size={1} />
+                {/* <Icon icon='arrow' className='combobox__arrow' direction='right' size={1} /> */}
+                <div className='react_icon_container'>
+                    <IoIosArrowDown className='combobox__arrow_btn' size='24px' />
+                </div>
                 <fieldset className='combobox__fieldset'>
                     <legend className='combobox__legend'>{label}</legend>
                 </fieldset>
