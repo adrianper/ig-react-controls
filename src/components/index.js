@@ -18,6 +18,7 @@ export { default as CharacterField } from './inputs/CharacterField/CharacterFiel
 export { default as CheckBox } from './inputs/CheckBox/CheckBox.jsx'
 export { default as ColorPicker } from './inputs/ColorPicker/ColorPicker.jsx'
 export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'
+export { default as FormHandler } from './inputs/FormHandler/FormHandler.jsx'
 export { default as RadioButton } from './inputs/RadioButton/RadioButton.jsx'
 export { default as SearchBox } from './inputs/SearchBox/SearchBox.jsx'
 export { default as TextField } from './inputs/TextField/TextField.jsx'
