@@ -1,13 +1,11 @@
 @import './character_field_colors.scss';
 
-
 .character_field {
     display: grid;
     grid-auto-flow: column;
     gap: 8px;
     justify-content: center;
     width: 100%;
-
 
     .character_input {
         display: flex;

@@ -2,8 +2,8 @@
 import resolve from '@rollup/plugin-node-resolve'
 import external from 'rollup-plugin-peer-deps-external'
 import terser from '@rollup/plugin-terser';
-import scss from 'rollup-plugin-scss'
-// import postcss from 'rollup-plugin-postcss'
+// import scss from 'rollup-plugin-scss'
+import postcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
 
 export default {
@@ -47,16 +47,15 @@ export default {
             extensions: ['.js', '.jsx']
         }),
         // sass(),
-        scss({
-            // exclude: ['node_modules/**'],
-            fileName: 'index.css',
-            failOnError: true,
-            // outputStyle: 'compressed'
-        }),
-        // postcss({
-        //     plugins: [],
-        //     minimize: true
+        // scss({
+        //     fileName: 'index.css',
+        //     failOnError: true,
+        //     // outputStyle: 'compressed'
         // }),
+        postcss({
+            plugins: [],
+            minimize: true
+        }),
         sucrase({
             exclude: ['node_modules/**'],
             transforms: ['jsx'],
@@ -70,5 +69,6 @@ export default {
     ],
     external: [
         'react',
+        'react-icons',
     ],
 };

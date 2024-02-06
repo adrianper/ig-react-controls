@@ -1,4 +1,4 @@
-import { forwardRef, memo } from "react"
+import React, { forwardRef, memo } from "react"
 import PropTypes from 'prop-types'
 import reactFastCompare from 'react-fast-compare'
 
@@ -12,7 +12,7 @@ const GridComponent = forwardRef(function Grid(props, ref) {
         skipClickOutside,
         ...rest
     } = props
-    
+
     let { className, style, } = props
 
     style = {

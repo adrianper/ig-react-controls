@@ -85,8 +85,8 @@ const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
     const handleSetValue = useCallback((text) => {
         const value = text.split('', length)
 
-        if (validateInput(value/*, pattern*/))
-            return
+        // if (validateInput(value/*, pattern*/))
+        //     return
 
         inputsRef.current.forEach((ref, i) => {
             const letter = text[i] || ''

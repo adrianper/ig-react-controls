@@ -21,7 +21,7 @@ const ComboBoxList = (props) => {
         // positionClass = comboLocation.top > windowHeight - comboLocation.bottom ? 'top ' : 'bottom '
         // positionClass += comboLocation.left > windowWidth - comboLocation.right ? 'right' : 'left'
 
-        if (comboLocation.top > windowHeight - comboLocation.bottom) style['bottom'] = windowHeight - comboLocation.top
+        if (comboLocation.top > windowHeight - comboLocation.bottom) listStyle['bottom'] = windowHeight - comboLocation.top
         else listStyle['top'] = comboLocation.bottom
 
         if (comboLocation.left > windowWidth - comboLocation.right) listStyle['right'] = windowWidth - comboLocation.right
