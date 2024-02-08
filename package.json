@@ -1,11 +1,16 @@
 {
   "name": "ig-react-controls",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "description": "InteliGene React Controls",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
+  "types": "src/index.d.ts",
   "homepage": "https://adrianper.github.io/ig-react-controls",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrianper/ig-react-controls"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
