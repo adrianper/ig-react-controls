@@ -1,8 +1,9 @@
 {
   "name": "ig-react-controls",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "type": "module",
   "description": "InteliGene React Controls",
+  "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "homepage": "https://adrianper.github.io/ig-react-controls",
   "repository": {
