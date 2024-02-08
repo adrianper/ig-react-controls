@@ -1,7 +1,9 @@
 {
   "name": "ig-react-controls",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "type": "module",
   "description": "InteliGene React Controls",
+  "module": "dist/index.js",
   "main": "dist/index.js",
   "homepage": "https://adrianper.github.io/ig-react-controls",
   "scripts": {
