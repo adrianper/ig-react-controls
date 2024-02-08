@@ -19,7 +19,7 @@ export default {
             format: 'cjs',
         },
         {
-            file: pkg.module,
+            file: pkg.main,
             format: 'es',
             exports: 'named',
             // sourcemap: 'inline',
