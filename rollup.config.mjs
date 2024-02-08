@@ -5,7 +5,7 @@ import terser from '@rollup/plugin-terser'
 // import scss from 'rollup-plugin-scss'
 import postcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase'
-// import pkg from './package.json' assert { type: 'json' }
+import pkg from './package.json' assert { type: 'json' }
 
 export default {
     onwarn(warning, warn) {
@@ -19,7 +19,7 @@ export default {
             format: 'cjs',
         },
         {
-            file: 'dist/index.esm.js',
+            file: pkg.module,
             format: 'es',
             exports: 'named',
             // sourcemap: 'inline',
