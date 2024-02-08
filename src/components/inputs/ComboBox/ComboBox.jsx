@@ -13,6 +13,10 @@ import ComboBoxList from './ComboBox__List'
 
 import './combobox.scss'
 
+/**
+ * @type React.FC<ComboBoxPropTypes>
+ */
+
 const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
     let {
         inputClassName,
@@ -148,7 +152,7 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
     )
 })
 
-ComboBoxComponent.propTypes = {
+const ComboBoxPropTypes = {
     inputClassName: PropTypes.string,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
@@ -165,6 +169,8 @@ ComboBoxComponent.propTypes = {
     reverseList: PropTypes.bool,
     floatingLabel: PropTypes.bool,
 }
+
+ComboBoxComponent.propTypes = ComboBoxPropTypes
 
 ComboBoxComponent.defaultProps = {
     inputClassName: '',

@@ -9,19 +9,19 @@ import './accordion_colors.scss'
 
 const Accordion = (props) => {
     /*------------------------------------PROPS--------------------------------*/
-    let { className } = props
-    const { title, toggleElement } = props
+    const {
+        className, title, toggleElement
+    } = props
 
     /*------------------------------------HOOKS--------------------------------*/
     const { isOpen, contentRef, getContentSize, toggleAccordion } = useAccordion()
 
     /*------------------------------------RENDER--------------------------------*/
     const contentStyles = { height: isOpen ? `${getContentSize()}px` : 0 }
-    className = className ? `${className} accordion` : 'accordion'
 
     return (
         <AccordionLayout {...{
-            className,
+            className: `accordion ${className}`,
             contentRef,
             contentStyles,
             isOpen,
@@ -43,7 +43,7 @@ export const accordionPropTypes = {
 Accordion.propTypes = accordionPropTypes
 
 Accordion.defaultProps = {
-    className: undefined,
+    className: '',
     title: undefined,
     toggleElement: undefined,
 }

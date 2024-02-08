@@ -19,6 +19,9 @@ const validateFields = (fieldsRef) => {
     return { valid, errors }
 }
 
+/**
+ * @type React.ForwardRefRenderFunction<React.ReactElement, FormHandlerPropTypes>
+ */
 const FormHandlerComponent = forwardRef(function FormHandler(props, ref) {
     /*--------------------------------------PROPS-----------------------------------*/
     const {
@@ -77,7 +80,7 @@ const FormHandlerComponent = forwardRef(function FormHandler(props, ref) {
     )
 })
 
-FormHandlerComponent.propTypes = {
+const FormHandlerPropTypes = {
     fields: PropTypes.objectOf(PropTypes.shape({
         'type': PropTypes.string.isRequired,
         'inputProps': PropTypes.object,
@@ -86,6 +89,8 @@ FormHandlerComponent.propTypes = {
     formData: PropTypes.object.isRequired,
     setFormData: PropTypes.func.isRequired,
 }
+
+FormHandlerComponent.propTypes = FormHandlerPropTypes
 
 FormHandlerComponent.defaultProps = {
     fields: {},

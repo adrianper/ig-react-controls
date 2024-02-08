@@ -11,6 +11,7 @@ import './radio_button_colors.scss'
 
 const RadioButton = (props) => {
     const {
+        className,
         value,
         onChange,
         gap,
@@ -23,7 +24,7 @@ const RadioButton = (props) => {
     } = props
 
     return (
-        <Grid itemsX='center' itemsY='center' className='radio_button_container' direction={direction} gap={gap} columns={templateColumns} rows={templateRows} style={containerStyle}>
+        <Grid itemsX='center' itemsY='center' className={`radio_button_container ${className}`} direction={direction} gap={gap} columns={templateColumns} rows={templateRows} style={containerStyle}>
             {
                 Object.keys(inputs).map(inputName => (
                     <Fragment key={inputName}>
@@ -59,7 +60,7 @@ RadioButton.propTypes = {
 }
 
 RadioButton.defaultProps = {
-    className: undefined,
+    className: '',
     value: '',
     onChange: undefined,
     gap: '1rem',

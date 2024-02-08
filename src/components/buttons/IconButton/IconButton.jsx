@@ -1,20 +1,16 @@
 import React, { memo } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import Icon from '../../imagery/Icon/Icon.jsx';
+import Icon from '../../imagery/Icon/Icon.jsx'
 
 import './icon_button.scss'
 
 const IconButton = (props) => {
     /*---------------------------------------PROPS-----------------------------------------*/
     const {
-        icon,
-        className,
-        size,
-        direction,
-        onClick,
-        style
+        className, icon, size, direction, onClick, style,
     } = props
+
     /*---------------------------------------FUNCTIONS-----------------------------------------*/
 
     /*---------------------------------------RENDER-----------------------------------------*/
@@ -28,25 +24,24 @@ const IconButton = (props) => {
                 direction={direction} />
         </div>
     )
-
 }
 
 IconButton.propTypes = {
-    icon: PropTypes.string.isRequired,
     className: PropTypes.string,
+    icon: PropTypes.string.isRequired,
     size: PropTypes.number,
     direction: PropTypes.oneOf(['up', 'right', 'down', 'left']),
     onClick: PropTypes.func.isRequired,
     style: PropTypes.object,
-};
+}
 
 IconButton.defaultProps = {
+    className: '',
     icon: undefined,
-    className: undefined,
     size: 1.3,
     direction: 'up',
     onClick: undefined,
     style: {},
-};
+}
 
 export default memo(IconButton)

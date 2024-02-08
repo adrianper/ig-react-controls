@@ -59,7 +59,6 @@ export const Example = {
         const [isLoadingCars, setIsLoadingCars] = useState(false)
 
         const handleChangeCar = (value) => {
-            console.log('Has been selected a car')
             setValue(value)
         }
 
@@ -85,7 +84,6 @@ export const Example = {
         }
 
         const handleChangeSearchText = debounce((value) => {
-            console.log('changed text ', value)
             getCars(value)
         }, 600)
 

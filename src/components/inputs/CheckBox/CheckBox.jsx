@@ -8,11 +8,10 @@ import './checkbox.scss'
 
 const CheckBox = (props) => {
     const {
+        className,
         value,
         onChange,
     } = props
-
-    let { className } = props
 
     const handleChange = useCallback(() => {
         onChange(!value)

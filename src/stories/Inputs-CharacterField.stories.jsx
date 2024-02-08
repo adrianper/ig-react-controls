@@ -51,6 +51,7 @@ export const Example = {
         label: 'Passcode',
         lblAlign: 'center',
         initValue: '1234',
+        onChange: v => v,
     },
     render: CharacterFieldExample
 }

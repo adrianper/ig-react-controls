@@ -4,13 +4,17 @@ import PropTypes from 'prop-types'
 
 import './text_field.scss'
 
+/**
+ * @type React.FC<TextFieldPropTypes>
+ */
+
 const TextFieldComponent = forwardRef(function TextField(props, ref) {
     /*------------------------------------PROPS--------------------------------*/
     let {
         className,
         label,
-        type = 'text',
-        value = '',
+        type,
+        value,
         onChange,
         placeholder,
         padding,
@@ -19,10 +23,10 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
         h100,
         maxWidth,
         style,
-        required = false,
+        required,
         pattern,
         onValidate,
-        errorMessage = '',
+        errorMessage,
         onFocus,
         onBlur,
         maxLength,
@@ -85,17 +89,16 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
     /*------------------------------------EFFECT-------------------------------*/
 
     /*------------------------------------RENDER-------------------------------*/
-    className = className ? `${className} text_field_container` : 'text_field_container'
-
-    style = useMemo(() => ({
+    style = {
         padding,
         margin,
         width: w100 && '100%',
         height: h100 && '100%',
         maxWidth,
-        ...style
-    }), [padding, margin, w100, h100, maxWidth, style])
+        ...style,
+    }
 
+    className = className ? `text_field_container ${className}` : 'text_field_container'
     if (!label) className += ' no_label'
     if (value || value === 0 || focused) className += ' label_up'
     if (focused) className += ' focused'
@@ -127,8 +130,8 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
     )
 })
 
-TextFieldComponent.propTypes = {
-    className: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+const TextFieldPropTypes = {
+    className: PropTypes.string,
     label: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.string.isRequired,
@@ -140,7 +143,7 @@ TextFieldComponent.propTypes = {
     maxWidth: PropTypes.string,
     style: PropTypes.object,
     required: PropTypes.bool,
-    pattern: PropTypes.string,
+    pattern: PropTypes.oneOfType([PropTypes.instanceOf(RegExp), PropTypes.string]),
     errorMessage: PropTypes.string,
     onBlur: PropTypes.func,
     onChange: PropTypes.func.isRequired,
@@ -149,8 +152,10 @@ TextFieldComponent.propTypes = {
     maxLength: PropTypes.number,
 }
 
+TextFieldComponent.propTypes = TextFieldPropTypes
+
 TextFieldComponent.defaultProps = {
-    className: undefined,
+    className: '',
     label: undefined,
     type: 'text',
     value: '',

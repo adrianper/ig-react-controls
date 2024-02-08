@@ -10,9 +10,9 @@ const tp = (propName, prop) => {
 }
 
 const Link = (props) => {
-    let {
-        align,
+    const {
         className,
+        align,
         size,
         weight,
         disabled,
@@ -32,28 +32,26 @@ const Link = (props) => {
         }
     }, [onClick])
 
-    className += ' link'
-    className += tp('size', size) + tp('align', align)
+    let elementClassName = `${className} link text--${weight}`
+    elementClassName += tp('size', size) + tp('align', align)
 
-    className += ` text--${weight}`
-
-    if (disabled) className += ' text--disabled'
-    if (underline) className += ' text--underline'
+    if (disabled) elementClassName += ' text--disabled'
+    if (underline) elementClassName += ' text--underline'
     if (ellipsis) {
-        className += ' text--ellipsis'
+        elementClassName += ' text--ellipsis'
         style.WebkitLineClamp = ellipsisLines
     }
 
     return (
-        <a className={className} style={style} href={href} target={target} onClick={handleClick}>
+        <a className={elementClassName} style={style} href={href} target={target} onClick={handleClick}>
             {props.children}
         </a>
     )
 }
 
 Link.propTypes = {
-    align: PropTypes.oneOf([undefined, 'left', 'center', 'right', 'justify']),
     className: PropTypes.string,
+    align: PropTypes.oneOf([undefined, 'left', 'center', 'right', 'justify']),
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
     weight: PropTypes.oneOf(['thin', 'extra-light', 'light', 'regular', 'medium', 'semi-bold', 'bold', 'extra-bold', 'heavy']),
     disabled: PropTypes.bool,
@@ -67,8 +65,8 @@ Link.propTypes = {
 }
 
 Link.defaultProps = {
+    className: '',
     align: undefined,
-    className: undefined,
     size: undefined,
     weight: 'regular',
     regular: false,

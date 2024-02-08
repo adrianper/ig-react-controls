@@ -4,10 +4,14 @@ import reactFastCompare from 'react-fast-compare'
 
 import './flex.scss'
 
-const FlexComponent = forwardRef(function Flex(props, ref) {
-    let { className } = props
+/**
+ * @type React.FC<FlexPropTypes>
+ */
 
+const FlexComponent = forwardRef(function Flex(props, ref) {
     const {
+        children,
+        className,
         style,
         margin,
         padding,
@@ -23,31 +27,34 @@ const FlexComponent = forwardRef(function Flex(props, ref) {
         ...rest
     } = props
 
-    const newStyle = useMemo(() => ({
-        padding,
-        margin,
+    const elementStyle = {
         flexDirection: direction,
-        gap,
-        alignItems: align,
-        justifyContent: justify,
         flexWrap: wrap && 'wrap',
         width: w100 && '100%',
         height: h100 && '100%',
         maxWidth,
-        ...style
-    }), [padding, margin, direction, gap, align, justify, wrap, w100, h100, maxWidth, style])
-
-    className = className ? `${className} flex` : 'flex'
+        alignItems: align,
+        justifyContent: justify,
+        padding,
+        margin,
+        gap,
+        ...style,
+    }
 
     return (
-
-        <div ref={ref} {...{ ...rest, className, style: newStyle, "data-skip-click-outside": skipClickOutside ? 1 : 0 }}>
-            {props.children}
+        <div
+            ref={ref}
+            className={`flex ${className}`}
+            style={elementStyle}
+            data-skip-click-outside={skipClickOutside ? 1 : 0}
+            {...rest}
+        >
+            {children}
         </div >
     )
 })
 
-FlexComponent.propTypes = {
+const FlexPropTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     margin: PropTypes.string,
@@ -61,10 +68,12 @@ FlexComponent.propTypes = {
     h100: PropTypes.bool,
     skipClickOutside: PropTypes.bool,
     wrap: PropTypes.bool,
-};
+}
+
+FlexComponent.propTypes = FlexPropTypes
 
 FlexComponent.defaultProps = {
-    className: undefined,
+    className: '',
     style: {},
     margin: undefined,
     padding: undefined,
@@ -77,6 +86,6 @@ FlexComponent.defaultProps = {
     h100: undefined,
     skipClickOutside: false,
     wrap: undefined,
-};
+}
 
 export default memo(FlexComponent, reactFastCompare)

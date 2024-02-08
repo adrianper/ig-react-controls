@@ -4,18 +4,22 @@ import reactFastCompare from 'react-fast-compare'
 
 import './grid.scss'
 
+/**
+ * @type React.FC<GridPropTypes>
+ */
+
 const GridComponent = forwardRef(function Grid(props, ref) {
     const {
-        padding, margin, gap, columns, rows,
+        children, className, style, padding, margin, gap, columns, rows,
         direction, itemsX, itemsY, contentX,
         contentY, w100, h100, maxWidth, selfY, selfX,
         skipClickOutside,
         ...rest
     } = props
 
-    let { className, style, } = props
-
-    style = {
+    const elementStyle = {
+        width: w100 && '100%',
+        height: h100 && '100%',
         padding,
         margin,
         gap: gap,
@@ -28,22 +32,24 @@ const GridComponent = forwardRef(function Grid(props, ref) {
         justifySelf: selfX,
         alignContent: contentY,
         alignSelf: selfY,
-        width: w100 && '100%',
-        height: h100 && '100%',
         maxWidth,
-        ...style
+        ...style,
     }
 
-    className = className ? `${className} grid` : 'grid'
-
     return (
-        <div ref={ref} {...{ ...rest, style, className, "data-skip-click-outside": skipClickOutside ? 1 : 0 }}>
-            {props.children}
-        </div>
+        <div
+            ref={ref}
+            className={`grid ${className}`}
+            style={elementStyle}
+            data-skip-click-outside={skipClickOutside ? 1 : 0}
+            {...rest}
+        >
+            {children}
+        </div >
     )
 })
 
-GridComponent.propTypes = {
+const GridPropTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
     padding: PropTypes.string,
@@ -64,9 +70,11 @@ GridComponent.propTypes = {
     skipClickOutside: PropTypes.bool,
 }
 
+GridComponent.propTypes = GridPropTypes
+
 GridComponent.defaultProps = {
     style: undefined,
-    className: undefined,
+    className: '',
     padding: undefined,
     margin: undefined,
     gap: undefined,

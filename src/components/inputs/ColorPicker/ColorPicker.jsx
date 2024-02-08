@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Grid, TextField } from '../../index'
@@ -6,7 +6,7 @@ import regexDictionary from '../../../utils/scripts/regexDictionary'
 
 import './color_picker.scss'
 
-const ColorPickerComponent = forwardRef(function ColorPicker(props, ref) {
+const ColorPicker = (props) => {
     const {
         value,
         onChange,
@@ -17,10 +17,9 @@ const ColorPickerComponent = forwardRef(function ColorPicker(props, ref) {
         <Grid itemsY='end' direction='column' gap='0.71rem'>
             <input type='color' value={value} onChange={e => onChange(e.target.value)} />
             <TextField
-                maxLength='7'
+                maxLength={7}
                 maxWidth='7.85rem'
                 label='HEX'
-                ref={ref}
                 pattern={regexDictionary.hexColor}
                 value={value}
                 onChange={onChange}
@@ -28,18 +27,18 @@ const ColorPickerComponent = forwardRef(function ColorPicker(props, ref) {
             />
         </Grid>
     )
-})
+}
 
-ColorPickerComponent.propTypes = {
+ColorPicker.propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     textFieldProps: PropTypes.object,
 }
 
-ColorPickerComponent.defaultProps = {
+ColorPicker.defaultProps = {
     value: '',
     onChange: undefined,
     textFieldProps: {},
 }
 
-export default ColorPickerComponent
+export default ColorPicker

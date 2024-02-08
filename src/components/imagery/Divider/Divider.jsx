@@ -15,7 +15,7 @@ const Divider = (props) => {
         width
     } = props
 
-    const style = {}
+    const style = { maxWidth }
 
     if (vertical) {
         style.minHeight = height || '100%'
@@ -31,7 +31,7 @@ const Divider = (props) => {
         style.borderTopColor = `var(--color--${color})`
     }
 
-    return <div className='divider' style={{ ...style, maxWidth }} />
+    return <div className='divider' style={style} />
 }
 
 Divider.propTypes = {

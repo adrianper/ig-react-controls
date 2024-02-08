@@ -11,8 +11,9 @@ import './accordion_group.scss'
 
 const AccordionGroupTab = (props) => {
     /*------------------------------------PROPS--------------------------------*/
-    let { className } = props
-    const { title, toggleElement, accordionIdx, isOpen, children, toggleAccordion } = props
+    const {
+        className, title, toggleElement, accordionIdx, isOpen, children, toggleAccordion
+    } = props
 
     /*------------------------------------HOOKS--------------------------------*/
     const { contentRef, getContentSize } = useAccordion()
@@ -24,11 +25,10 @@ const AccordionGroupTab = (props) => {
 
     /*------------------------------------RENDER--------------------------------*/
     const contentStyles = { height: isOpen ? `${getContentSize()}px` : 0 }
-    className = className ? `${className} accordion` : 'accordion'
 
     return <AccordionLayout {...{
         children,
-        className,
+        className: `accordion ${className}`,
         contentRef,
         contentStyles,
         isOpen,
@@ -38,10 +38,13 @@ const AccordionGroupTab = (props) => {
     }} />
 }
 
+/**
+ * @type React.FC<AccordionGroupPropTypes>
+ */
+
 const AccordionGroupComponent = forwardRef(function AccordionGroup(props, ref) {
     /*------------------------------------PROPS--------------------------------*/
-    let { className } = props
-    const { accordions/*, onToggle*/ } = props
+    const { className = '', accordions/*, onToggle*/ } = props
 
     /*------------------------------------STATE--------------------------------*/
     const [openAccordion, setOpenAccordion] = useState(0)
@@ -63,10 +66,9 @@ const AccordionGroupComponent = forwardRef(function AccordionGroup(props, ref) {
     // }, [openAccordion, onToggle])
 
     /*------------------------------------RENDER--------------------------------*/
-    className = className ? `${className} accordion_group` : 'accordion_group'
 
     return (
-        <div className={className}>
+        <div className={`accordion_group ${className}`}>
             {accordions.map((accordion, i) => (
                 <AccordionGroupTab
                     key={i + 1}
@@ -83,14 +85,16 @@ const AccordionGroupComponent = forwardRef(function AccordionGroup(props, ref) {
     )
 })
 
-AccordionGroupComponent.propTypes = {
+const AccordionGroupPropTypes = {
     className: PropTypes.string,
     accordions: PropTypes.arrayOf(PropTypes.shape({ ...accordionPropTypes, content: accordionPropTypes.toggleElement })),
     // onToggle: PropTypes.func
 }
 
+AccordionGroupComponent.propTypes = AccordionGroupPropTypes
+
 AccordionGroupComponent.defaultProps = {
-    className: undefined,
+    className: '',
     accordions: [],
     // onToggle: undefined,
 }

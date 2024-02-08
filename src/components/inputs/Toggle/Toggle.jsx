@@ -9,10 +9,8 @@ import { CgToggleOff, CgToggleOn } from "react-icons/cg";
 import './toggle.scss'
 
 const Toggle = (props) => {
-    let {
-        className = ''
-    } = props
     const {
+        className,
         value,
         onChange,
         alwaysActive,
@@ -22,11 +20,11 @@ const Toggle = (props) => {
         onChange(!value)
     }, [onChange, value])
 
-    className += ' toggle_switch'
-    if (alwaysActive) className += ' not_inactive'
+    let elementClassName = `toggle_switch ${className}`
+    if (alwaysActive) elementClassName += ' not_inactive'
 
     return (
-        <div className={className} onClick={handleChange}>
+        <div className={elementClassName} onClick={handleChange}>
             {alwaysActive ?
                 <Fragment>
                     <CgToggleOn className={`not_inactive react_icon ${!value ? 'active' : 'inactive'}`} />
@@ -54,7 +52,7 @@ Toggle.propTypes = {
 }
 
 Toggle.defaultProps = {
-    className: undefined,
+    className: '',
     value: false,
     onChange: undefined,
     alwaysActive: false,

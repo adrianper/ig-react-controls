@@ -8,15 +8,20 @@ const tp = (propName, prop) => {
     else return ''
 }
 
+/**
+ * @type React.FC<TextPropTypes>
+ */
+
 const Text = forwardRef((props, ref) => {
-    let {
+    const {
+        className,
+        children,
         size,
         weight,
         disabled,
         ellipsis,
         ellipsisLines,
         underline,
-        className,
         color,
         align,
         variant,
@@ -24,43 +29,43 @@ const Text = forwardRef((props, ref) => {
         ...rest
     } = props
 
-    className += ` text`
-    className += tp('size', size)
-    className += tp('align', align)
-    className += tp('color', color)
+    let elementClassName = 'text ' + className
+    elementClassName += tp('size', size)
+    elementClassName += tp('align', align)
+    elementClassName += tp('color', color)
 
-    className += ` text--${weight}`
+    elementClassName += ` text--${weight}`
 
-    if (disabled) className += ' text--disabled'
-    if (underline) className += ' text--underline'
+    if (disabled) elementClassName += ' text--disabled'
+    if (underline) elementClassName += ' text--underline'
     if (ellipsis) {
-        className += ' text--ellipsis'
+        elementClassName += ' text--ellipsis'
         style['WebkitLineClamp'] = ellipsisLines
     }
 
-    const tagProps = { className, style, ref }
+    const tagProps = { className: elementClassName, style, ref }
 
     switch (variant) {
-        case 'h1': return <h1 {...{ ...tagProps, ...rest }}>{props.children}</h1>
-        case 'h2': return <h2 {...{ ...tagProps, ...rest }}>{props.children}</h2>
-        case 'h3': return <h3 {...{ ...tagProps, ...rest }}>{props.children}</h3>
-        case 'h4': return <h4 {...{ ...tagProps, ...rest }}>{props.children}</h4>
-        case 'h5': return <h5 {...{ ...tagProps, ...rest }}>{props.children}</h5>
-        case 'p': return <p {...{ ...tagProps, ...rest }}>{props.children}</p>
-        case 'li': return <li {...{ ...tagProps, ...rest }}>{props.children}</li>
-        case 'span': return <span {...{ ...tagProps, ...rest }}>{props.children}</span>
-        case 'label': return <label {...{ ...tagProps, ...rest }}>{props.children}</label>
-        default: return <p {...{ ...tagProps, ...rest }}>{props.children}</p>
+        case 'h1': return <h1 {...{ ...tagProps, ...rest }}>{children}</h1>
+        case 'h2': return <h2 {...{ ...tagProps, ...rest }}>{children}</h2>
+        case 'h3': return <h3 {...{ ...tagProps, ...rest }}>{children}</h3>
+        case 'h4': return <h4 {...{ ...tagProps, ...rest }}>{children}</h4>
+        case 'h5': return <h5 {...{ ...tagProps, ...rest }}>{children}</h5>
+        case 'p': return <p {...{ ...tagProps, ...rest }}>{children}</p>
+        case 'li': return <li {...{ ...tagProps, ...rest }}>{children}</li>
+        case 'span': return <span {...{ ...tagProps, ...rest }}>{children}</span>
+        case 'label': return <label {...{ ...tagProps, ...rest }}>{children}</label>
+        default: return <p {...{ ...tagProps, ...rest }}>{children}</p>
     }
 })
 
-Text.propTypes = {
+const TextPropTypes = {
+    className: PropTypes.string,
     weight: PropTypes.oneOf(['thin', 'extra-light', 'light', 'regular', 'medium', 'semi-bold', 'bold', 'extra-bold', 'heavy']),
     disabled: PropTypes.bool,
     ellipsis: PropTypes.bool,
     ellipsisLines: PropTypes.number,
     underline: PropTypes.bool,
-    className: PropTypes.string,
     color: PropTypes.string,
     align: PropTypes.oneOf([PropTypes.null, 'left', 'center', 'right', 'justify']),
     variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'span', 'label']),
@@ -68,13 +73,15 @@ Text.propTypes = {
     style: PropTypes.object,
 }
 
+Text.propTypes = TextPropTypes
+
 Text.defaultProps = {
+    className: '',
     weight: 'regular',
     disabled: false,
     ellipsis: false,
     ellipsisLines: 1,
     underline: false,
-    className: undefined,
     color: 'first',
     align: undefined,
     variant: 'p',

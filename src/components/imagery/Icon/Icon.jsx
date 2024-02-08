@@ -12,7 +12,7 @@ const calcRotation = (direction) => ({
 })[direction]
 
 const Icon = (props) => {
-    let {
+    const {
         className,
         direction,
         filter,
@@ -22,13 +22,9 @@ const Icon = (props) => {
         style,
     } = props
 
-    className += ' icon'
-    className += icon !== '' ? ` icon--${icon}` : ''
-    className += ` ${calcRotation(direction)}`
-
     if (filter) style['filter'] = `var(--filter--${filter})`
 
-    const styleSpan = {
+    const elementStyle = {
         width: `${size}rem`,
         height: `${size}rem`,
         backgroundImage: `url(https://s3.us-east-2.amazonaws.com/magiei2/public/img/icons/${icon}.svg)`,
@@ -36,7 +32,11 @@ const Icon = (props) => {
     }
 
     return (
-        <span className={className} style={styleSpan} onClick={onClick} />
+        <span
+            className={`icon ${className} icon--${icon} ${calcRotation(direction)}`}
+            style={elementStyle}
+            onClick={onClick}
+        />
     )
 }
 
@@ -51,8 +51,8 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
+    className: '',
     icon: undefined,
-    className: undefined,
     size: 1,
     direction: 'up',
     onClick: undefined,

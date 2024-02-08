@@ -9,10 +9,15 @@ const generateArray = length => [...Array(length).keys()]
 
 const cursorToEnd = () => { document.activeElement.setSelectionRange(1, 1) }
 
+/**
+ * @type React.FC<CharacterFieldPropTypes>
+ */
+
 const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
     //--------------------PROPS--------------------
-    let { className, initValue, } = props
+    let { initValue, } = props
     const {
+        className,
         length,
         label,
         // pattern,
@@ -164,7 +169,6 @@ const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
     }, [setStatus])
 
     //--------------------RENDER--------------------
-    className += `${className} character_field_container`
 
     const inputs = useMemo(() => lengthArray.map((i) => {
         return <input
@@ -183,7 +187,7 @@ const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
 
 
     return (
-        <Grid ref={characterFieldRef} className={className} gap='1em'>
+        <Grid ref={characterFieldRef} className={`character_field_container ${className}`} gap='1em'>
             {label && <Text align={lblAlign}>{label}</Text>}
             <div className='character_field'>
                 {inputs}
@@ -206,7 +210,7 @@ const charactersLength = (props, propName, componentName) => {
     return null
 }
 
-CharacterFieldComponent.propTypes = {
+const CharacterFieldPropTypes = {
     className: PropTypes.string,
     length: charactersLength,
     label: PropTypes.string,
@@ -217,8 +221,10 @@ CharacterFieldComponent.propTypes = {
     // type: PropTypes.oneOf(['text', 'number']),
 }
 
+CharacterFieldComponent.propTypes = CharacterFieldPropTypes
+
 CharacterFieldComponent.defaultProps = {
-    className: undefined,
+    className: '',
     length: 1,
     label: undefined,
     initValue: '',

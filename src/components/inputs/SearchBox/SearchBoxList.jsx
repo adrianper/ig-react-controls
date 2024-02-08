@@ -72,7 +72,7 @@ const SearchBoxList = (props, ref) => {
                         onClick={() => handleSelect(key, options[key])}>
                         {options[key]}
                         {showOptionDescription && optionsDescriptions[key] &&
-                            <Text elipsis elipsisLines={2} style={{ fontStyle: 'italic' }}>{optionsDescriptions[key]}</Text>}
+                            <Text ellipsis ellipsisLines={2} style={{ fontStyle: 'italic' }}>{optionsDescriptions[key]}</Text>}
                     </div>
                 )}
             <Spinner isLoading={isLoadingOptions} />
