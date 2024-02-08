@@ -2,7 +2,8 @@
   "name": "ig-react-controls",
   "version": "1.0.0",
   "description": "InteliGene React Controls",
-  "main": "dist/index.js",
+  "main": "main.js",
+  "homepage": "https://adrianper.github.io/ig-react-controls",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
@@ -35,7 +36,6 @@
     "react-icons": "^5.0.1",
     "rollup": "^4.0.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.0",
     "sass": "^1.69.5",
     "storybook": "^7.6.7"
