@@ -1,10 +1,10 @@
-name: Publish to npm
+name: Publish on NPM
 on:
   push:
     branches: [main]
 
 jobs:
-  publish:
+  build-and-publish-npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

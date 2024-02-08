@@ -1,11 +1,11 @@
-name: Build and Publish storybook to GitHub Pages
+name: Deploy storybook on GH-Pages
 
 on:
   push:
     branches:
       - "main"
 jobs:
-  build-and-deploy:
+  build-and-deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
