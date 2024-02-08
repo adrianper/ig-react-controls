@@ -1,10 +1,10 @@
 {
   "name": "ig-react-controls",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "InteliGene React Controls",
-  "module": "dist/index.js",
-  "main": "dist/index.js",
+  "module": "dist/index.esm.min.js",
+  "main": "dist/index.esm.min.js",
   "homepage": "https://adrianper.github.io/ig-react-controls",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
