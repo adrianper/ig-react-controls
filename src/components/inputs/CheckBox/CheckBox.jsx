@@ -20,8 +20,11 @@ const CheckBox = (props) => {
 
     return (
         <div className={`checkbox ${className}`} onClick={handleChange}>
-            <IoMdCheckboxOutline className={`react_icon on ${value ? 'active' : ''}`} />
-            <MdCheckBoxOutlineBlank className={`react_icon off ${!value ? 'active' : ''}`} />
+            {value ?
+                <IoMdCheckboxOutline color='var(--component--color)' />
+                :
+                <MdCheckBoxOutlineBlank color='var(--component--color--inactive)' />
+            }
         </div>
     )
 }
