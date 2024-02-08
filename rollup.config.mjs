@@ -6,6 +6,7 @@ import terser from '@rollup/plugin-terser'
 import postcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase'
 import pkg from './package.json' assert { type: 'json' }
+import { dts } from 'rollup-plugin-dts'
 
 export default {
     onwarn(warning, warn) {
@@ -39,6 +40,11 @@ export default {
                 "react-dom/client": "ReactDOM",
                 "react": "React",
             },
+        },
+        {
+            file: pkg.types,
+            format: "esm",
+            plugins: [dts()],
         }
     ],
     plugins: [
