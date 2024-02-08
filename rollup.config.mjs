@@ -5,7 +5,7 @@ import terser from '@rollup/plugin-terser'
 // import scss from 'rollup-plugin-scss'
 import postcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 
 export default {
     onwarn(warning, warn) {
