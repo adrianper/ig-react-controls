@@ -80,10 +80,11 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
 
     useImperativeHandle(ref, () => ({
         errorMessage,
+        label,
         focus: () => inputRef.current.focus(),
         validate,
         value,
-        setStatus
+        setStatus,
     }), [errorMessage, validate, value, setStatus])
 
     /*------------------------------------EFFECT-------------------------------*/

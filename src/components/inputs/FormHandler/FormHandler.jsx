@@ -4,21 +4,6 @@ import PropTypes from 'prop-types'
 import { Text } from '../../index'
 import { useRenderInput } from '../../../hooks'
 
-const validateFields = (fieldsRef) => {
-    const errors = []
-    let valid = true
-
-    fieldsRef.current.forEach(fieldRef => {
-        if (fieldRef.current?.validate && !fieldRef.current.validate()) {
-            valid = false
-            // if (fieldRef.current.errorMessage !== '')
-            errors.push(fieldRef.current.errorMessage || `Error on field "${fieldRef.current.label}"`)
-        }
-    })
-
-    return { valid, errors }
-}
-
 /**
  * @type React.ForwardRefRenderFunction<React.ReactElement, FormHandlerPropTypes>
  */
@@ -61,10 +46,18 @@ const FormHandlerComponent = forwardRef(function FormHandler(props, ref) {
 
     /*--------------------------------------IMPERATIVEHANDLE-----------------------------------*/
     const validateForm = useCallback(() => {
-        const { valid, errors } = validateFields(fieldsRef)
+        const errors = []
+        let valid = true
 
-        return [valid, errors]
-    }, [validateFields])
+        fieldsRef.current.forEach(fieldRef => {
+            if (fieldRef.current?.validate && !fieldRef.current.validate()) {
+                valid = false
+                errors.push(fieldRef.current.errorMessage || `Error on field "${fieldRef.current.label}"`)
+            }
+        })
+
+        return { valid, errors }
+    }, [fieldsRef.current])
 
     useImperativeHandle(ref, () => ({
         validate: validateForm,

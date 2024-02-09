@@ -115,7 +115,7 @@ const CharacterFieldComponent = forwardRef(function CharacterField(props, ref) {
             handleSetValue(text)
 
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }, [handleSetValue])
 

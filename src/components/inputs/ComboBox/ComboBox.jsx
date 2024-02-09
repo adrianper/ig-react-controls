@@ -101,9 +101,10 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
     }, [onValidate, required, value])
 
     useImperativeHandle(ref, () => ({
+        errorMessage,
+        label,
         validate,
         setStatus,
-        errorMessage,
     }), [errorMessage, validate, setStatus])
 
     /*-----------------------------------------------EFFECTS-----------------------------------------------------------*/

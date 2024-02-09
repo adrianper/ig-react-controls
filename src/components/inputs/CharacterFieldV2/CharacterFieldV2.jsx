@@ -72,7 +72,7 @@ const CharacterFieldV2Component = forwardRef(function CharacterField(props, ref)
             const text = await window.navigator.clipboard.readText()
             onChange(text.slice(0, size))
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }, [size, onChange])
 

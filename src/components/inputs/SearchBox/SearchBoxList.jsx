@@ -22,7 +22,7 @@ import { Spinner, Text } from '../../index'
 //global variables
 //static values
 
-const SearchBoxList = (props, ref) => {
+const SearchBoxList = (props) => {
     /*------------------------------------PROPS------------------------------*/
     const {
         isOpen, isLoadingOptions, options, optionsDescriptions, value, handleSelect,

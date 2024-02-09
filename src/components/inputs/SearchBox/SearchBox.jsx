@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState, } from 'react'
+import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import reactFastCompare from 'react-fast-compare'
 import PropTypes from 'prop-types'
 // import libraries
@@ -33,21 +33,28 @@ const setListScroll = container => {
         }, 50)
 }
 
-const SearchBoxComponent = function SearchBox(props) {
+/**
+ * @type React.ForwardRefExoticComponent<SearchBoxPropTypes>
+ */
+
+const SearchBoxComponent = forwardRef(function SearchBox(props, ref) {
     /*------------------------------------PROPS------------------------------*/
-    let { className } = props
     const {
+        className,
         value,
         onChange,
         onChangeSearchText,
         label,
         placeholder,
+        required,
+        errorMessage,
         optionsEmptyText,
         listWidth,
         descriptionWidth,
         options,
         optionsDescriptions,
         isLoadingOptions,
+        style,
     } = props
 
     /*------------------------------------CONTEXT/STORE----------------------*/
@@ -57,6 +64,7 @@ const SearchBoxComponent = function SearchBox(props) {
 
     /*------------------------------------REFS-------------------------------*/
     const containerRef = useRef()
+    const textFieldRef = useRef()
 
     /*------------------------------------HOOKS------------------------------*/
     useClickOutside(containerRef, () => setOpenList(false))
@@ -80,22 +88,39 @@ const SearchBoxComponent = function SearchBox(props) {
         if (Object.keys(options).length > 0) setOpenList(true)
     }, [options])
 
+    const validate = useCallback(() => {
+        let valid = true
+        if (required && value === '') {
+            textFieldRef.current.setStatus('error')
+            valid = false
+        }
+
+        if (valid) {
+            textFieldRef.current.setStatus('normal')
+        }
+
+        return valid
+    }, [required, value])
+
     /*------------------------------------IMPERATIVEHANDLE-------------------*/
+    useImperativeHandle(ref, () => ({
+        errorMessage,
+        label,
+        validate,
+        setStatus: status => textFieldRef.current.setStatus(status),
+    }), [label, errorMessage, validate, textFieldRef.current])
+
     /*------------------------------------EFFECTS----------------------------*/
     useEffect(() => {
         if (openList)
             setListScroll(containerRef.current)
     }, [openList])
 
-
     /*------------------------------------RENDER-----------------------------*/
-    className = className ? `${className} search_box` : 'search_box'
-
-    console.log('isLoadingOptions ', isLoadingOptions)
 
     return (
-        <div ref={containerRef} className={className}>
-            <TextField className="search_box__input" label={label} placeholder={placeholder}
+        <div ref={containerRef} className={`search_box ${className}`} style={style}>
+            <TextField ref={textFieldRef} className="search_box__input" label={label} placeholder={placeholder}
                 value={searchText} onChange={handleChangeInput} onFocus={handleFocusInput} />
             <SearchBoxList {...{
                 isOpen: openList, isLoadingOptions, options, optionsDescriptions, value,
@@ -103,32 +128,40 @@ const SearchBoxComponent = function SearchBox(props) {
             }} />
         </div>
     )
-}
+})
 
-SearchBoxComponent.propTypes = {
+const SearchBoxPropTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     label: PropTypes.string,
     placeholder: PropTypes.string,
+    required: PropTypes.bool,
+    errorMessage: PropTypes.string,
     optionsEmptyText: PropTypes.string,
     listWidth: PropTypes.string,
     descriptionWidth: PropTypes.string,
     options: PropTypes.object.isRequired,
     optionsDescriptions: PropTypes.object,
     isLoadingOptions: PropTypes.bool.isRequired,
+    style: PropTypes.object,
 }
+
+SearchBoxComponent.propTypes = SearchBoxPropTypes
 
 SearchBoxComponent.defaultProps = {
     value: '',
     onChange: undefined,
     label: '',
     placeholder: 'Buscar...',
+    required: false,
+    errorMessage: '',
     optionsEmptyText: 'No se encontraron resultados',
     listWidth: '',
     descriptionWidth: '5em',
     options: {},
     optionsDescriptions: {},
     isLoadingOptions: false,
+    style: {},
 }
 
 export default memo(SearchBoxComponent, reactFastCompare)
