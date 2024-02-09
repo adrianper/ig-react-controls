@@ -57,11 +57,20 @@ const formFields = {
             style: { gridArea: 'b' },
         }
     },
+    promo_code: {
+        type: 'character_field',
+        inputProps: {
+            label: 'Promotional code',
+            size: 4,
+            type: 'number',
+            style: { gridArea: 'c' },
+        }
+    },
     terms: {
         type: 'checkbox',
         inputProps: {
             className: 'terms_checkbox',
-            style: { gridArea: 'c' },
+            style: { gridArea: 'd' },
         }
     },
     label_terms: {
@@ -69,7 +78,7 @@ const formFields = {
         inputProps: {
             children: 'Accept terms and conditions',
             className: 'terms_label',
-            style: { gridArea: 'd' },
+            style: { gridArea: 'e' },
         }
     },
 }
@@ -82,7 +91,7 @@ export const Example = {
         const [formData, setFormData] = useState({})
 
         return (
-            <Grid gap='1rem' itemsX='center' itemsY='center' style={{ gridTemplateAreas: '"a a" "b b" "c d"' }}>
+            <Grid gap='1rem' itemsX='center' itemsY='center' style={{ gridTemplateAreas: '"a a" "b b" "c c" "d e"' }}>
                 <FormHandler fields={args.fields} formData={formData} setFormData={setFormData} />
             </Grid>
         )

@@ -14,7 +14,7 @@ export { default as Divider } from './imagery/Divider/Divider.jsx'
 export { default as Icon } from './imagery/Icon/Icon.jsx'
 
 /** Inputs */
-export { default as CharacterField } from './inputs/CharacterField/CharacterField.jsx'
+export { default as CharacterField } from './inputs/CharacterFieldV2/CharacterFieldV2.jsx'
 export { default as CheckBox } from './inputs/CheckBox/CheckBox.jsx'
 export { default as ColorPicker } from './inputs/ColorPicker/ColorPicker.jsx'
 export { default as ComboBox } from './inputs/ComboBox/ComboBox.jsx'

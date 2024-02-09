@@ -25,6 +25,7 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
         options,
         nullValue,
         required,
+        onValidate,
         placeholder,
 
         w100,
@@ -82,15 +83,22 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
     const validate = useCallback(() => {
         let valid = true
 
-        if (required) {
-            if (value === '') {
-                setStatus('error')
-                valid = false
-            }
+        if (required && value === '') {
+            setStatus('error')
+            valid = false
+        }
+
+        if (onValidate && !onValidate(value)) {
+            setStatus('error')
+            valid = false
+        }
+
+        if (valid) {
+            setStatus('normal')
         }
 
         return valid
-    }, [required, value])
+    }, [onValidate, required, value])
 
     useImperativeHandle(ref, () => ({
         validate,
@@ -159,6 +167,7 @@ const ComboBoxPropTypes = {
     options: PropTypes.object.isRequired,
     nullValue: PropTypes.bool,
     required: PropTypes.bool,
+    onValidate: PropTypes.func,
     placeholder: PropTypes.string,
     w100: PropTypes.bool,
     maxWidth: PropTypes.string,
@@ -179,6 +188,7 @@ ComboBoxComponent.defaultProps = {
     options: {},
     nullValue: false,
     required: false,
+    onValidate: undefined,
     placeholder: 'Elige una opción',
     w100: false,
     maxWidth: undefined,

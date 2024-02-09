@@ -1,5 +1,9 @@
 @import './character_field_colors.scss';
 
+.character_field_container>.text {
+    padding: 0 8px;
+}
+
 .character_field {
     display: grid;
     grid-auto-flow: column;
@@ -18,6 +22,14 @@
         text-align: center;
         font-size: var(--text-size--3);
         background: none;
+    }
+
+    &.password {
+
+        input::-ms-reveal,
+        input::-ms-clear {
+            display: none;
+        }
     }
 }
 

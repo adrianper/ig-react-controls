@@ -11,8 +11,8 @@ const validateFields = (fieldsRef) => {
     fieldsRef.current.forEach(fieldRef => {
         if (fieldRef.current?.validate && !fieldRef.current.validate()) {
             valid = false
-            if (fieldRef.current.errorMessage !== '')
-                errors.push(fieldRef.current.errorMessage)
+            // if (fieldRef.current.errorMessage !== '')
+            errors.push(fieldRef.current.errorMessage || `Error on field "${fieldRef.current.label}"`)
         }
     })
 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CharacterField } from "../components";
 import { customArgTypes } from "./customArgTypes";
 
@@ -24,7 +25,7 @@ export default {
             description: 'Label alignment, possible values "left" | "center" | "right"',
             table: { type: { summary: 'string' }, defaultValue: { summary: 'undefined' } }
         },
-        length: {
+        size: {
             control: 'number',
             description: 'Field length, number of input characters (1 - 12)',
             table: {
@@ -32,26 +33,33 @@ export default {
             },
         },
         type: {
-            description: 'Label alignment, possible values "text" | "number"',
+            control: 'select',
+            description: 'Label alignment, accepted values "text" | "number" | "password"',
             table: { type: { summary: 'string' }, defaultValue: { summary: 'text' } }
         }
     },
 }
 
 const CharacterFieldExample = (props) => {
+    const [characterValue, setCharacterValue] = useState('')
+
     return (
-        <CharacterField {...props} />
+        <CharacterField
+            {...props}
+            value={characterValue}
+            onChange={setCharacterValue}
+        />
     )
 }
 
 export const Example = {
     args: {
         className: 'custom_characterfield',
+        size: 6,
         length: 6,
         label: 'Passcode',
         lblAlign: 'center',
-        initValue: '1234',
-        onChange: v => v,
+        type: 'password',
     },
     render: CharacterFieldExample
 }
