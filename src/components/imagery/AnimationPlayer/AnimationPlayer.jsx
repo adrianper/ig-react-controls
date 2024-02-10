@@ -51,7 +51,7 @@ const AnimationPlayer = (props) => {
 
 AnimationPlayer.propTypes = {
     className: PropTypes.string,
-    animation: PropTypes.oneOf(['pulse', 'shake', 'upDown', 'downUp', 'zoomIn']),
+    animation: PropTypes.oneOf(['pulse', 'shakeC', 'shakeB', 'upDown', 'downUp', 'zoomIn']),
     duration: PropTypes.number,
     hoverAnimate: PropTypes.bool,
 }
