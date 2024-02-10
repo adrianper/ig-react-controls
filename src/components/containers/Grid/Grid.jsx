@@ -12,7 +12,7 @@ const GridComponent = forwardRef(function Grid(props, ref) {
     const {
         children, className, style, padding, margin, gap, columns, rows,
         direction, itemsX, itemsY, contentX,
-        contentY, w100, h100, maxWidth, selfY, selfX,
+        contentY, w100, h100, maxWidth, maxHeight, selfY, selfX,
         skipClickOutside,
         ...rest
     } = props
@@ -33,6 +33,7 @@ const GridComponent = forwardRef(function Grid(props, ref) {
         alignContent: contentY,
         alignSelf: selfY,
         maxWidth,
+        maxHeight,
         ...style,
     }
 
@@ -65,6 +66,7 @@ const GridPropTypes = {
     w100: PropTypes.bool,
     h100: PropTypes.bool,
     maxWidth: PropTypes.string,
+    maxHeight: PropTypes.string,
     selfY: PropTypes.string,
     selfX: PropTypes.string,
     skipClickOutside: PropTypes.bool,
@@ -88,6 +90,7 @@ GridComponent.defaultProps = {
     w100: false,
     h100: false,
     maxWidth: undefined,
+    maxHeight: undefined,
     selfY: undefined,
     selfX: undefined,
     skipClickOutside: false,

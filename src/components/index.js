@@ -29,6 +29,10 @@ export { default as Spinner } from './loading/Spinner/Spinner.jsx'
 
 /** Misc */
 export { default as Portal } from './misc/Portal/Portal.jsx'
+
+/** Modal */
+export { default as Modal } from './modal/Modal/Modal.jsx'
+
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'
 export { default as Text } from './typography/Text/Text.jsx'
