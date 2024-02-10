@@ -216,3 +216,86 @@ body.dark {
 .hidden {
     display: none !important;
 }
+/*-----------------------------ANIMATIONS-------------------------------*/
+.animation--pulse {
+    animation-name: pulse;
+    // animation-timing-function: cubic-bezier(0.42, 0, 0.07, 1.02);
+    animation-timing-function: ease;
+    animation-duration: 0.6s;
+    transform-origin: center;
+}
+
+.animation--shakeC {
+    animation-name: shake;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    transform-origin: center;
+}
+
+.animation--shakeB {
+    animation-name: shake;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    transform-origin: 50% 70%;
+}
+
+.animation--upDown {
+    animation-name: upDown;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    transform-origin: center;
+}
+
+.animation--downUp {
+    animation-name: downUp;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+    transform-origin: center;
+}
+
+.animation--zoomIn {
+    animation-name: zoomIn;
+    animation-timing-function: cubic-bezier(.87,-1.15,.95,1.25); 
+    animation-duration: 0.6s;
+}
+
+@keyframes pulse {
+    30% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes upDown {
+    0% { transform: translateY(0%); }
+    25% { transform: translateY(-4%); }
+    // 50% { transform: translateY(-4%); }
+    75% { transform: translateY(4%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes downUp {
+    0% { transform: translateY(4%); }
+    25% { transform: translateY(-4%); }
+    50% { transform: translateY(4%); }
+    75% { transform: translateY(-4%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.85); }
+    80% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}

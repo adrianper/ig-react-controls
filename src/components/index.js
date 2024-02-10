@@ -10,6 +10,7 @@ export { default as Grid } from './containers/Grid/Grid.jsx'
 export { default as Slider } from './containers/Slider/Slider.jsx'
 
 /** Imagery */
+export { default as AnimationPlayer } from './imagery/AnimationPlayer/AnimationPlayer.jsx'
 export { default as Divider } from './imagery/Divider/Divider.jsx'
 export { default as Icon } from './imagery/Icon/Icon.jsx'
 

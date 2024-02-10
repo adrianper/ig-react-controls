@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Button, Modal, Text, Toggle } from '../components';
+import { Button, Modal, Text } from '../components';
 import { customArgTypes } from './customArgTypes';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Modal/Modal',
-    component: Toggle,
+    component: Modal,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
@@ -22,6 +22,7 @@ export default {
 export const Example = {
     render: () => {
         const [value, setValue] = useState(false)
+
         const toggleModal = () => {
             setValue(value => !value)
         }
