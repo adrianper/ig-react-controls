@@ -27,7 +27,7 @@ const AnimationPlayer = (props) => {
     /*------------------------------------EFFECT---------------------------------*/
     useEffect(() => {
         containerRef.current.style.animationDuration = `${duration}s`
-    }, [])
+    }, [duration])
 
     useEffect(() => {
         if (animate)

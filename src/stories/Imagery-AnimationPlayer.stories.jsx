@@ -1,6 +1,6 @@
 import { AnimationPlayer, Flex } from "../components";
 import { IoClose } from "react-icons/io5";
-import { BiMessageError, BiSolidMessageError } from "react-icons/bi";
+import { BiErrorCircle, BiSolidErrorCircle, BiSolidMessageError } from "react-icons/bi";
 import { TbInfoSquare, TbInfoSquareFilled } from "react-icons/tb";
 import { TbAlertTriangle, TbAlertTriangleFilled } from "react-icons/tb";
 import { BsPatchCheck, BsPatchCheckFill } from "react-icons/bs";
@@ -33,7 +33,7 @@ export const Example = {
                 </AnimationPlayer>
                 <Flex>
                     <AnimationPlayer animation='pulse'>
-                        <BiMessageError size='5rem' color='var(--color--red--1)' />
+                        <BiErrorCircle size='5rem' color='var(--color--red--1)' />
                     </AnimationPlayer>
                     <AnimationPlayer animation='pulse'>
                         <TbInfoSquare size='5rem' color='var(--color--blue--7)' />
@@ -47,7 +47,7 @@ export const Example = {
                 </Flex>
                 <Flex>
                     <AnimationPlayer animation='pulse'>
-                        <BiSolidMessageError size='5rem' color='var(--color--red--1)' />
+                        <BiSolidErrorCircle size='5rem' color='var(--color--red--1)' />
                     </AnimationPlayer>
                     <AnimationPlayer animation='pulse'>
                         <TbInfoSquareFilled size='5rem' color='var(--color--blue--7)' />
