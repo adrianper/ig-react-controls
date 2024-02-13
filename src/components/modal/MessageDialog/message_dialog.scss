@@ -1,0 +1,41 @@
+.message_dialog_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(var(--app--bg--color), 0.8);
+    z-index: var(--index--message-dialog);
+
+    .message_dialog {
+        max-width: 40em;
+        max-height: 60vh;
+        border-radius: 1em;
+        background-color: rgb(var(--app--bg--color));
+        box-shadow: var(--card--shadow);
+        margin: 0px 10px;
+
+        .react_icon.close_modal_btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            font-size: 24px;
+            color: var(--color--red--1);
+            cursor: pointer;
+        }
+
+        .message_dialog__title {
+            font-size: 16px;
+        }
+
+        .message_dialog__content {
+            overflow: auto;
+
+            ul {
+                padding-inline-start: 1.5rem;
+            }
+        }
+
+        .message_dialog__buttons {
+            gap: 1rem;
+        }
+    }
+}

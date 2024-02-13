@@ -85,7 +85,7 @@ FlexComponent.defaultProps = {
     w100: undefined,
     h100: undefined,
     skipClickOutside: false,
-    wrap: undefined,
+    wrap: false,
 }
 
 export default memo(FlexComponent, reactFastCompare)

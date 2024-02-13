@@ -32,6 +32,7 @@ export { default as Spinner } from './loading/Spinner/Spinner.jsx'
 export { default as Portal } from './misc/Portal/Portal.jsx'
 
 /** Modal */
+export { default as MessageDialog } from './modal/MessageDialog/MessageDialog.jsx'
 export { default as Modal } from './modal/Modal/Modal.jsx'
 
 /** Typography */

@@ -11,9 +11,10 @@ const Modal = (props) => {
         children,
         className,
         isOpen,
+        closeBtn,
+        onClose,
         maxWidth,
         maxHeight,
-        closeModal,
     } = props
 
     return !isOpen ? null :
@@ -21,7 +22,9 @@ const Modal = (props) => {
             <Portal>
                 <Flex className='modal' padding='1rem'>
                     <Grid w100 maxWidth={maxWidth} maxHeight={maxHeight} padding='26px 18px' className={`modal_content ${className}`}>
-                        <IoClose style className='react_icon close_modal_btn' onClick={closeModal} />
+                        {closeBtn && (
+                            <IoClose className='react_icon close_modal_btn' onClick={onClose} />
+                        )}
                         {children}
                     </Grid>
                 </Flex>
@@ -32,18 +35,20 @@ const Modal = (props) => {
 Modal.propTypes = {
     className: PropTypes.string,
     isOpen: PropTypes.bool,
+    closeBtn: PropTypes.bool,
+    onClose: PropTypes.func.isRequired,
     maxWidth: PropTypes.string,
     maxHeight: PropTypes.string,
-    closeModal: PropTypes.func.isRequired,
 }
 
 Modal.defaultProps = {
     className: '',
     isOpen: false,
     title: '',
-    maxWidth: '50vw',
+    closeBtn: true,
+    onClose: undefined,
+    maxWidth: '40em',
     maxHeight: '50vh',
-    closeModal: undefined,
 }
 
 export default Modal
