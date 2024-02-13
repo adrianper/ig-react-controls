@@ -33,7 +33,7 @@ const ButtonComponent = forwardRef(function Button(props, ref) {
 
 const ButtonPropTypes = {
     className: PropTypes.string,
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
     style: PropTypes.object,
     variant: PropTypes.oneOf(['filled', 'filled--danger', 'outlined', 'outlined--danger']),
 }
