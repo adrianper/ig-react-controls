@@ -21,7 +21,7 @@ const mdTypes = {
 const mdTypeIcons = {
     'ALERT': <TbAlertTriangle size='5rem' color='var(--color--yellow--1)' />,
     'ERROR': <BiErrorCircle size='5rem' color='var(--color--red--1)' />,
-    'INFO': <TbInfoSquare size='5rem' color='var(--color--blue--7)' />,
+    'INFO': <TbInfoSquare size='5rem' color='var(--color--blue--4)' />,
     'SUCCESS': <BsPatchCheck size='5rem' color='var(--color--green--1)' />,
 }
 

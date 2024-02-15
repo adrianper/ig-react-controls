@@ -22,11 +22,17 @@ export default {
 
 export const Example = {
     render: (args) => {
-        const [value, setValue] = useState(false)
+        const [darkMode, setDarkMode] = useState(document.body.classList.contains('dark'))
+
+        const handleChange = () => {
+            document.body.classList.toggle('dark', !darkMode)
+            setDarkMode(value => !value)
+        }
+
         return (
             <Grid gap='1rem' itemsX='center'>
-                <Toggle value={value} onChange={setValue} alwaysActive={args.alwaysActive} />
-                <Text>Value is {value ? 'true' : 'false'}</Text>
+                <Text>Dark mode</Text>
+                <Toggle value={darkMode} onChange={handleChange} alwaysActive={args.alwaysActive} />
             </Grid>
         )
     }

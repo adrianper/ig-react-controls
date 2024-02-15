@@ -8,6 +8,7 @@ export { default as AccordionGroup } from './containers/AccordionGroup/Accordion
 export { default as Flex } from './containers/Flex/Flex.jsx'
 export { default as Grid } from './containers/Grid/Grid.jsx'
 export { default as Slider } from './containers/Slider/Slider.jsx'
+export { default as Table } from './containers/Table/Table.jsx'
 
 /** Imagery */
 export { default as AnimationPlayer } from './imagery/AnimationPlayer/AnimationPlayer.jsx'

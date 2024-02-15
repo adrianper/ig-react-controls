@@ -36,7 +36,7 @@ export const Example = {
                         <BiErrorCircle size='5rem' color='var(--color--red--1)' />
                     </AnimationPlayer>
                     <AnimationPlayer animation='pulse'>
-                        <TbInfoSquare size='5rem' color='var(--color--blue--7)' />
+                        <TbInfoSquare size='5rem' color='var(--color--blue--4)' />
                     </AnimationPlayer>
                     <AnimationPlayer animation='pulse'>
                         <TbAlertTriangle size='5rem' color='var(--color--yellow--1)' />
@@ -50,7 +50,7 @@ export const Example = {
                         <BiSolidErrorCircle size='5rem' color='var(--color--red--1)' />
                     </AnimationPlayer>
                     <AnimationPlayer animation='pulse'>
-                        <TbInfoSquareFilled size='5rem' color='var(--color--blue--7)' />
+                        <TbInfoSquareFilled size='5rem' color='var(--color--blue--4)' />
                     </AnimationPlayer>
                     <AnimationPlayer animation='pulse'>
                         <TbAlertTriangleFilled size='5rem' color='var(--color--yellow--1)' />
