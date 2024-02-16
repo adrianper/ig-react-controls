@@ -24,21 +24,27 @@ export default {
 }
 
 const citiesObj = {
-    1: 'Cd. Juárez',
-    2: 'Chihuahua',
-    3: 'Cuauhtémoc',
-    4: 'Delicias',
-    4: 'Parral',
+    1: 'New York',
+    2: 'Los Angeles',
+    3: 'San Francisco',
+    4: 'Chicago',
+    5: 'San Diego',
 }
 
 const ComboBoxExample = (props) => {
     const [city, setCity] = useState('')
 
     return <div style={{ width: '100vw', maxWidth: '200px', minHeight: '250px' }}>
-        <ComboBox floatingLabel nullValue label='City' options={citiesObj} {...{ ...props, value: city, onChange: setCity }} />
+        <ComboBox {...{ ...props, value: city, onChange: setCity }} />
     </div>
 }
 
 export const Example = {
+    args: {
+        floatingLabel: true,
+        nullValue: true,
+        label: 'City',
+        options: citiesObj,
+    },
     render: ComboBoxExample
 }

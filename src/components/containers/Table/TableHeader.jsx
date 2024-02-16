@@ -1,5 +1,8 @@
 import React from 'react'
-import { Icon, Text } from '../../index'
+import { Text } from '../../index'
+
+import { MdSort } from "react-icons/md"
+
 
 const FilterTableHeader = ({ columns, sortColumn, ascSort, toggleAscSort }) => {
 
@@ -8,7 +11,11 @@ const FilterTableHeader = ({ columns, sortColumn, ascSort, toggleAscSort }) => {
             {columns.map((col, i) =>
                 <div key={i} className='header__data' onClick={() => toggleAscSort(col.name)}>
                     <Text className='header_data__text'>{col.displayName}</Text>
-                    {sortColumn === col.name && <Icon size={1} icon='arrow' direction={ascSort ? 'right' : 'left'} />}
+                    {sortColumn === col.name && (
+                        <div className="react_icon_container">
+                            <MdSort size='1.4em' color='var(--component--color)' style={{ scale: ascSort ? '1 -1' : '' }} />
+                        </div>
+                    )}
                 </div>
             )}
         </div>

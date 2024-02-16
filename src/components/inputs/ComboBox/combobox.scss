@@ -135,7 +135,7 @@
 
     &.label_up:not(.no_label) {
         .combobox__label {
-            transform: translate(1.2rem, -0.75rem);
+            transform: translate(1rem, -0.75rem);
             font-size: var(--text-size--2);
         }
 
@@ -158,17 +158,6 @@
         /*-----------------------------OPTIONS----------------------------------*/
         .combobox__list__option {
             padding: 0.7rem 1rem;
-        }
-
-        &.label_up:not(.no_label) {
-            .combobox__label {
-                transform: translate(1rem, -0.7rem);
-            }
-        }
-
-        .combobox__label {
-            line-height: 1rem;
-            transform: translate(1rem, 0.8rem);
         }
     }
 }

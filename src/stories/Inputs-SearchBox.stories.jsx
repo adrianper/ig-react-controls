@@ -87,7 +87,7 @@ export const Example = {
             getCars(value)
         }, 600)
 
-        return <div style={{ minHeight: '300px' }}>
+        return <div style={{ display: 'grid', gap: '1rem', alignContent: 'start', minHeight: '300px' }}>
             <SearchBox
                 label={args.label || 'Search car'}
                 placeholder={args.placeholder}

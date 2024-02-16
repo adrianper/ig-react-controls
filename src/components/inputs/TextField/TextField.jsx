@@ -99,6 +99,8 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
         ...style,
     }
 
+    const labelContent = `${label}${required ? ' *' : ''}`
+
     className = className ? `text_field_container ${className}` : 'text_field_container'
     if (!label) className += ' no_label'
     if (value || value === 0 || focused) className += ' label_up'
@@ -107,7 +109,7 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
 
     return (
         <div className={className} style={style}>
-            {label && <label className='text_field__label'>{label}</label>}
+            {label && <label className='text_field__label'>{labelContent}</label>}
             <div className='text_field'>
                 <input
                     type={type}
@@ -124,7 +126,7 @@ const TextFieldComponent = forwardRef(function TextField(props, ref) {
                     {...{ value, ...rest }}
                 />
                 <fieldset className='text_field__fieldset'>
-                    <legend className='text_field__legend'>{label}</legend>
+                    <legend className='text_field__legend'>{labelContent}</legend>
                 </fieldset>
             </div>
         </div>

@@ -5,7 +5,7 @@ import reactFastCompare from 'react-fast-compare'
 import _$ from 'jquery'
 
 import { useClickOutside, useScrollOutside } from '../../../utils/hooks'
-import { Grid, Text/*, Icon*/ } from '../../index'
+import { Grid, Text } from '../../index'
 
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -38,6 +38,7 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
         sortList,
         reverseList,
         floatingLabel,
+        style,
     } = props
 
     /*-----------------------------------------------STATE-----------------------------------------------------------*/
@@ -121,35 +122,39 @@ const ComboBoxComponent = forwardRef(function ComboBox(props, ref) {
     }, [isOpen])
 
     useEffect(() => {
-        if (nullValue)
+        if (nullValue) {
             options[''] = placeholder
+        } else if (!nullValue) {
+            delete options['']
+        }
     }, [nullValue, options, placeholder])
 
     /*-----------------------------------------------RENDER------------------------------------------------------------*/
-    if (!label) className += ' no_label'
+    const valueContent = value !== '' ? options[value] : (floatingLabel ? '_' : placeholder)
+    const labelContent = `${label || placeholder}${required ? ' *' : ''}`
+
+    if (!labelContent) className += ' no_label'
     if (value !== '' || !floatingLabel) className += ' label_up'
     if (isFocused) className += ` combobox--focused`
     className += ` combobox--status--${comboStatus}${floatingLabel ? ' floating_label' : ''}`
 
     inputClassName += ' combobox'
 
-    /*-----------------------------------------------TEXT-----------------------------------------------------------*/
-    const text = value !== '' ? options[value] : (floatingLabel ? '_' : placeholder)
-
     return (
         <Grid w100={w100} maxWidth={maxWidth} ref={comboboxRef}
-            gap='1rem' className={`${className} combobox__container`} >
-            {label && <label className='combobox__label'>{label}</label>}
+            gap='1rem' className={`${className} combobox__container`}
+            style={style}
+        >
+            {labelContent && <label className='combobox__label'>{labelContent}</label>}
             <Grid className={inputClassName} onClick={handleClickCombobox} tabIndex='0'
                 contentY='center' itemsY='center' direction='column' gap='1rem' columns='1fr auto'
                 onFocus={handleFocus} onBlur={handleBlur}>
-                <Text className='combobox__text'>{text}</Text>
-                {/* <Icon icon='arrow' className='combobox__arrow' direction='right' size={1} /> */}
+                <Text className='combobox__text'>{valueContent}</Text>
                 <div className='react_icon_container'>
                     <IoIosArrowDown className='combobox__arrow_btn' size='24px' />
                 </div>
                 <fieldset className='combobox__fieldset'>
-                    <legend className='combobox__legend'>{label}</legend>
+                    <legend className='combobox__legend'>{labelContent}</legend>
                 </fieldset>
             </Grid>
 
@@ -178,6 +183,7 @@ const ComboBoxPropTypes = {
     sortList: PropTypes.bool,
     reverseList: PropTypes.bool,
     floatingLabel: PropTypes.bool,
+    style: PropTypes.object,
 }
 
 ComboBoxComponent.propTypes = ComboBoxPropTypes
@@ -190,7 +196,7 @@ ComboBoxComponent.defaultProps = {
     nullValue: false,
     required: false,
     onValidate: undefined,
-    placeholder: 'Elige una opción',
+    placeholder: 'Please select',
     w100: false,
     maxWidth: undefined,
     className: '',
@@ -198,7 +204,8 @@ ComboBoxComponent.defaultProps = {
     errorMessage: '',
     sortList: true,
     reverseList: false,
-    floatingLabel: false,
+    floatingLabel: true,
+    style: {},
 }
 
 export default memo(ComboBoxComponent, reactFastCompare)

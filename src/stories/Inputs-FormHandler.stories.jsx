@@ -41,20 +41,33 @@ const formFields = {
     email: {
         type: 'text_field',
         inputProps: {
+            required: true,
             label: 'Email',
             type: 'email',
             placeholder: 'Type email',
             style: { gridArea: 'a' },
+            autocomplete: 'new-password'
         },
         onChange: console.log,
     },
     password: {
         type: 'text_field',
         inputProps: {
+            required: true,
             label: 'Password',
             type: 'password',
             placeholder: 'Type password',
             style: { gridArea: 'b' },
+        }
+    },
+    city: {
+        type: 'combobox',
+        inputProps: {
+            required: true,
+            label: 'City',
+            options: { "1": "San Diego", "2": "Los Angeles", "3": "San Francisco" },
+            nullValue: true,
+            style: { gridArea: 'c' },
         }
     },
     promo_code: {
@@ -63,14 +76,14 @@ const formFields = {
             label: 'Promotional code',
             size: 4,
             type: 'number',
-            style: { gridArea: 'c' },
+            style: { gridArea: 'd' },
         }
     },
     terms: {
         type: 'checkbox',
         inputProps: {
             className: 'terms_checkbox',
-            style: { gridArea: 'd' },
+            style: { gridArea: 'e' },
         }
     },
     label_terms: {
@@ -78,7 +91,7 @@ const formFields = {
         inputProps: {
             children: 'Accept terms and conditions',
             className: 'terms_label',
-            style: { gridArea: 'e' },
+            style: { gridArea: 'f' },
         }
     },
 }
@@ -91,7 +104,7 @@ export const Example = {
         const [formData, setFormData] = useState({})
 
         return (
-            <Grid gap='1rem' itemsX='center' itemsY='center' style={{ gridTemplateAreas: '"a a" "b b" "c c" "d e"' }}>
+            <Grid gap='1rem' itemsY='center' style={{ gridTemplateAreas: '"a a" "b b" "c c" "d d" "e f"' }}>
                 <FormHandler fields={args.fields} formData={formData} setFormData={setFormData} />
             </Grid>
         )

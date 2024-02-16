@@ -37,14 +37,13 @@ export default {
 export const Example = {
     args: {
         className: 'custom_textfield',
-        type: 'email',
-        label: 'Email',
+        label: 'Address',
     },
     render: (args) => {
         const [value, setValue] = useState('')
 
-        return <div style={{ width: '100vw', maxWidth: '200px', minHeight: '200px' }}>
-            <TextField {...{ ...args, value, onChange: setValue }} data-some-property={'some-value'} />
+        return <div style={{ width: '100vw', maxWidth: '200px', minHeight: '250px' }}>
+            <TextField {...{ ...args, value, onChange: setValue }} autoComplete='new-password' />
         </div>
     }
 }
