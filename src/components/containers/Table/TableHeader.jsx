@@ -4,7 +4,7 @@ import { Text } from '../../index'
 import { MdSort } from "react-icons/md"
 
 
-const FilterTableHeader = ({ columns, sortColumn, ascSort, toggleAscSort }) => {
+const TableHeader = ({ columns, sortColumn, ascSort, toggleAscSort }) => {
 
     return (
         <div className='table__header'>
@@ -22,4 +22,4 @@ const FilterTableHeader = ({ columns, sortColumn, ascSort, toggleAscSort }) => {
     )
 }
 
-export default FilterTableHeader
+export default TableHeader

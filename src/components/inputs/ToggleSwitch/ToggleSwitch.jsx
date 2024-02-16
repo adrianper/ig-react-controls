@@ -6,9 +6,9 @@ import { LiaToggleOnSolid, LiaToggleOffSolid } from "react-icons/lia";
 // import { BiSolidToggleLeft, BiSolidToggleRight } from "react-icons/bi";
 import { CgToggleOff, CgToggleOn } from "react-icons/cg";
 
-import './toggle.scss'
+import './toggle_switch.scss'
 
-const Toggle = (props) => {
+const ToggleSwitch = (props) => {
     const {
         className,
         value,
@@ -44,18 +44,18 @@ const Toggle = (props) => {
     )
 }
 
-Toggle.propTypes = {
+ToggleSwitch.propTypes = {
     className: PropTypes.string,
     value: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
     alwaysActive: PropTypes.bool,
 }
 
-Toggle.defaultProps = {
+ToggleSwitch.defaultProps = {
     className: '',
     value: false,
     onChange: undefined,
     alwaysActive: false,
 }
 
-export default memo(Toggle, reactFastCompare)
+export default memo(ToggleSwitch, reactFastCompare)

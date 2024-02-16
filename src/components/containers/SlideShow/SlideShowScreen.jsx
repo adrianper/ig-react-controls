@@ -3,7 +3,7 @@ import reactFastCompare from 'react-fast-compare'
 
 import { Grid } from 'components'
 
-const SliderScreen = props => {
+const SlideShowScreen = props => {
 
     const {
         children,
@@ -47,11 +47,11 @@ const SliderScreen = props => {
 
     return (
         <Grid
-            className={`slider__screen${currentScreen === screenIdx ? ' open' : ''}`}
+            className={`slide_show__screen${currentScreen === screenIdx ? ' open' : ''}`}
             style={{ left: `-${currentScreen * 100}%` }}>
             {children}
         </Grid>
     )
 }
 
-export default memo(SliderScreen, reactFastCompare)
+export default memo(SlideShowScreen, reactFastCompare)

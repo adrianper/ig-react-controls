@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Grid, MessageDialog, Table } from "../components";
-import { customArgTypes } from "./customArgTypes";
 
 import { FaRegTrashAlt } from "react-icons/fa";
-
+import { MdOutlineContentCopy } from "react-icons/md";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -56,26 +55,46 @@ const TableExample = (props) => {
         setTimeout(() => {
             setCars(result)
             setIsLoadingCars(false)
-            mdRef.current.show({
-                type: 'SUCCESS',
-                title: 'Option has been deleted successfully'
-            })
         }, 600)
     }
 
     const handleClickDelete = async (carData) => {
         const confirm = await mdRef.current.showConfirm({
             type: 'ERROR',
-            title: 'Are you sure you want to delete this car?'
+            title: 'Are you sure you want to delete this car?',
         })
 
         if (confirm)
             deleteCar(carData)
     }
 
+    const handleClickCopy = async (carData) => {
+        // Get the text field
+        const copyContent = JSON.stringify(carData)
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyContent);
+
+        // Alert the copied text
+        mdRef.current.show({
+            type: 'SUCCESS',
+            title: 'Row has been copied to clipboard',
+            content: copyContent,
+        })
+    }
+
     useEffect(() => {
         getCars()
     }, [])
+
+    const rowButtons = [
+        <div className='react_icon_container' onClick={handleClickCopy} >
+            <MdOutlineContentCopy className='react_icon' />
+        </div>,
+        <div className='react_icon_container' onClick={handleClickDelete} >
+            <FaRegTrashAlt className='react_icon delete_btn' />
+        </div>,
+    ]
 
     return (
         <Grid style={{ width: '600px' }}>
@@ -84,10 +103,10 @@ const TableExample = (props) => {
                 isLoadingRows={isLoadingCars}
                 onClickRow={handleClickRow}
                 rows={carsList}
-                rowButtons={[<FaRegTrashAlt className='delete' onClick={handleClickDelete} />]}
+                rowButtons={rowButtons}
                 bodyMaxHeight={props.bodyMaxHeight}
             />
-            <MessageDialog ref={mdRef} closeBtn={false}/>
+            <MessageDialog ref={mdRef} closeBtn={false} />
         </Grid>
     )
 }

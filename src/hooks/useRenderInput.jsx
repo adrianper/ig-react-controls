@@ -1,5 +1,5 @@
 import React from 'react'
-import { CharacterField, CheckBox, ColorPicker, ComboBox, RadioButton, SearchBox, TextField, Toggle } from '../components'
+import { CharacterField, CheckBox, ColorPicker, ComboBox, RadioButton, SearchBox, TextField, ToggleSwitch } from '../components'
 
 export const useRenderInput = () => (inputType, inputProps) => {
     switch (inputType) {
@@ -22,9 +22,9 @@ export const useRenderInput = () => (inputType, inputProps) => {
             return null//<ComboBoxRange {...inputProps} />
         case 'file_input':
             return null//<FileInput {...inputProps} />
-        case 'toggle':
+        case 'toggle_switch':
             delete inputProps['ref']
-            return <Toggle {...inputProps} />
+            return <ToggleSwitch {...inputProps} />
         case 'radio_button':
             return <RadioButton {...inputProps} />
         case 'record_group':

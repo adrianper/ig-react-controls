@@ -46,9 +46,8 @@ const formFields = {
             type: 'email',
             placeholder: 'Type email',
             style: { gridArea: 'a' },
-            autocomplete: 'new-password'
+            autoComplete: 'new-password'
         },
-        onChange: console.log,
     },
     password: {
         type: 'text_field',
@@ -58,7 +57,7 @@ const formFields = {
             type: 'password',
             placeholder: 'Type password',
             style: { gridArea: 'b' },
-        }
+        },
     },
     city: {
         type: 'combobox',
@@ -68,7 +67,8 @@ const formFields = {
             options: { "1": "San Diego", "2": "Los Angeles", "3": "San Francisco" },
             nullValue: true,
             style: { gridArea: 'c' },
-        }
+        },
+        onChange: console.log,
     },
     promo_code: {
         type: 'character_field',

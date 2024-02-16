@@ -1,9 +1,9 @@
 
-.slider {
+.slide_show {
     overflow: hidden;
     max-width: 100vw;
 
-    .slider__screen {
+    .slide_show__screen {
         will-change: left;
         transition: 0.3s;
         width: 100%;

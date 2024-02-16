@@ -1,6 +1,6 @@
 import React, { cloneElement, useCallback } from 'react'
 
-const FilterTableBody = ({ columns, rows, onClickRow, rowButtons, bodyMaxHeight }) => {
+const TableBody = ({ columns, rows, onClickRow, rowButtons, bodyMaxHeight }) => {
 
     const handleClickRow = useCallback((data) => {
         onClickRow && onClickRow(data)
@@ -33,15 +33,14 @@ const FilterTableBody = ({ columns, rows, onClickRow, rowButtons, bodyMaxHeight 
                     }
                     )}
                     {rowButtons.map((buttonElement, key) => (
-                        <div className='react_icon_container' key={key}>
-                            {cloneElement(
-                                buttonElement,
-                                {
-                                    className: `react_icon row_btn ${buttonElement.props.className}`,
-                                    onClick: (e) => { handleClickRowBtn(e, buttonElement.props.onClick, row) }
-                                }
-                            )}
-                        </div>
+                        cloneElement(
+                            buttonElement,
+                            {
+                                key,
+                                className: `row_btn ${buttonElement.props.className}`,
+                                onClick: (e) => { handleClickRowBtn(e, buttonElement.props.onClick, row) }
+                            }
+                        )
                     ))}
 
                 </div>
@@ -50,4 +49,4 @@ const FilterTableBody = ({ columns, rows, onClickRow, rowButtons, bodyMaxHeight 
     )
 }
 
-export default FilterTableBody
+export default TableBody

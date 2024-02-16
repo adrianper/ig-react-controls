@@ -8,7 +8,7 @@ import { TfiViewList } from "react-icons/tfi";
 import { PiListFill } from "react-icons/pi";
 import { MdOutlineGridView } from "react-icons/md"
 
-import './filter_table.scss'
+import './table.scss'
 import TableBody from './TableBody'
 import TableHeader from './TableHeader'
 
@@ -39,7 +39,7 @@ const Table = (props) => {
 
     /*---------------------------------------RENDER-----------------------------------------*/
     const containerStyle = useMemo(() => ({
-        '--filter-table-rows-template': `repeat(${columns.length}, 1fr)${rowButtons.length ? ` repeat(${rowButtons.length}, 1.2em)` : ''}`
+        '--table-rows-template': `repeat(${columns.length}, 1fr)${rowButtons.length ? ` repeat(${rowButtons.length}, 1.2em)` : ''}`
     }), [columns.length, rowButtons.length])
 
     let sortedRows
@@ -57,8 +57,8 @@ const Table = (props) => {
     }
 
     return (
-        <div className={`filter_table_container ${className}`} style={containerStyle}>
-            <div className='filter_container'>
+        <div className={`table_container ${className}`} style={containerStyle}>
+            <div className='container'>
                 <div className='layout_selector'>
                     <div className="react_icon_container">
                         <MdOutlineGridView
@@ -77,7 +77,7 @@ const Table = (props) => {
                 </div>
             </div>
 
-            <div className={`filter_table ${cardsLayout ? 'cards_layout' : ''}`}>
+            <div className={`table ${cardsLayout ? 'cards_layout' : ''}`}>
                 <TableHeader
                     columns={columns}
                     sortColumn={sortColumn}

@@ -4,9 +4,9 @@ import reactFastCompare from 'react-fast-compare'
 
 import { Flex, Grid } from '../../index'
 
-import './slider.scss'
+import './slide_show.scss'
 
-function Slider(props) {
+function SlideShow(props) {
 
     const {
         containerProps,
@@ -24,13 +24,13 @@ function Slider(props) {
     /*--------------------------------------EFFECTS----------------------------------------*/
 
     /*---------------------------------------RENDER----------------------------------------*/
-    className += ' slider'
+    className += ' slide_show'
 
     return (
         <Flex className={className} {...containerProps}>
             {Children.map(props.children, (child, i) =>
                 <Grid
-                    className={`slider__screen${currentScreen === i ? ' open' : ''}`}
+                    className={`slide_show__screen${currentScreen === i ? ' open' : ''}`}
                     style={{ left: `-${currentScreen * 100}%` }}>
                     {child}
                 </Grid>
@@ -39,14 +39,14 @@ function Slider(props) {
     )
 }
 
-Slider.propTypes = {
+SlideShow.propTypes = {
     containerProps: PropTypes.object,
     currentScreen: PropTypes.number,
 }
 
-Slider.defaultProps = {
+SlideShow.defaultProps = {
     containerProps: {},
     currentScreen: 0,
 }
 
-export default memo(Slider, reactFastCompare)
+export default memo(SlideShow, reactFastCompare)

@@ -7,7 +7,7 @@ export { default as Accordion } from './containers/Accordion/Accordion.jsx'
 export { default as AccordionGroup } from './containers/AccordionGroup/AccordionGroup.jsx'
 export { default as Flex } from './containers/Flex/Flex.jsx'
 export { default as Grid } from './containers/Grid/Grid.jsx'
-export { default as Slider } from './containers/Slider/Slider.jsx'
+export { default as SlideShow } from './containers/SlideShow/SlideShow.jsx'
 export { default as Table } from './containers/Table/Table.jsx'
 
 /** Imagery */
@@ -24,7 +24,7 @@ export { default as FormHandler } from './inputs/FormHandler/FormHandler.jsx'
 export { default as RadioButton } from './inputs/RadioButton/RadioButton.jsx'
 export { default as SearchBox } from './inputs/SearchBox/SearchBox.jsx'
 export { default as TextField } from './inputs/TextField/TextField.jsx'
-export { default as Toggle } from './inputs/Toggle/Toggle.jsx'
+export { default as ToggleSwitch } from './inputs/ToggleSwitch/ToggleSwitch.jsx'
 
 /** Loading */
 export { default as Spinner } from './loading/Spinner/Spinner.jsx'

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Grid, Text, Toggle } from '../components';
+import { Grid, Text, ToggleSwitch } from '../components';
 import { customArgTypes } from './customArgTypes';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Inputs/Toggle',
-    component: Toggle,
+    title: 'Inputs/ToggleSwitch',
+    component: ToggleSwitch,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered',
@@ -32,7 +32,7 @@ export const Example = {
         return (
             <Grid gap='1rem' itemsX='center'>
                 <Text>Dark mode</Text>
-                <Toggle value={darkMode} onChange={handleChange} alwaysActive={args.alwaysActive} />
+                <ToggleSwitch value={darkMode} onChange={handleChange} alwaysActive={args.alwaysActive} />
             </Grid>
         )
     }

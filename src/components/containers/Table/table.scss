@@ -50,7 +50,7 @@
     }
 }
 
-.filter_table_container {
+.table_container {
     display: grid;
     gap: 1em;
     width: 100%;
@@ -66,7 +66,7 @@
         }
     }
 
-    .filter_container {
+    .container {
         display: grid;
         align-items: center;
         justify-content: end;
@@ -82,15 +82,11 @@
                 &.active {
                     color: var(--component--color--active);
                 }
-
-                &.delete:hover {
-                    color: var(--color--red--1);
-                }
             }
         }
     }
 
-    .filter_table {
+    .table {
         @include cardsLayout();
 
         .table__header,
@@ -98,7 +94,7 @@
             display: grid;
             align-items: center;
             gap: 0.8em;
-            grid-template-columns: var(--filter-table-rows-template);
+            grid-template-columns: var(--table-rows-template);
             padding: 0.8em 1em;
         }
 
@@ -163,12 +159,14 @@
                 }
 
                 .react_icon {
-                    &.active {
+                    &:hover {
                         color: var(--component--color--active);
                     }
 
-                    &.delete:hover {
-                        color: var(--color--red--1);
+                    &.delete_btn {
+                        &:hover {
+                            color: var(--color--red--1);
+                        }
                     }
                 }
             }
@@ -176,7 +174,7 @@
     }
 
     @media screen and (max-width: var(--size--tablet)) {
-        .filter_container {
+        .container {
             //     grid-template-columns: 1fr;
 
             .layout_selector {
@@ -184,7 +182,7 @@
             }
         }
 
-        .filter_table {
+        .table {
             .table__header {
                 display: none;
             }
@@ -204,8 +202,8 @@
 }
 
 .dark {
-    .filter_table_container {
-        .filter_table {
+    .table_container {
+        .table {
             .table__body {
                 .table__row.clickable {
                     &:hover {
