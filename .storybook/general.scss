@@ -218,6 +218,14 @@ body.dark {
     overflow: hidden;
 }
 
+.react_icon.react_icon--hover_colored {
+    color: var(--component--color--inactive);
+
+    &:hover {
+        color: var(--component--color);
+    }
+}
+
 .disabled {
     opacity: 0.7;
     pointer-events: none;

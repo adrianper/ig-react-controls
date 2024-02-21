@@ -35,6 +35,7 @@ export { default as Portal } from './misc/Portal/Portal.jsx'
 /** Modal */
 export { default as MessageDialog } from './modal/MessageDialog/MessageDialog.jsx'
 export { default as Modal } from './modal/Modal/Modal.jsx'
+export { default as Tooltip } from './modal/Tooltip/Tooltip.jsx'
 
 /** Typography */
 export { default as Link } from './typography/Link/Link.jsx'

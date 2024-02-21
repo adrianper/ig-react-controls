@@ -1,6 +1,6 @@
 {
   "name": "ig-react-controls",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "type": "module",
   "description": "InteliGene React Controls",
   "main": "dist/index.esm.js",
