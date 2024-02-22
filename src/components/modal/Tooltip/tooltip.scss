@@ -17,7 +17,7 @@ $tooltip--triangle--width: 8px;
     // color: var(--color--gray--2);
     border-radius: 0.5em;
     padding: 8px;
-    position: absolute;
+    position: fixed;
     z-index: var(--index--tooltip);
     margin: $tooltip--triangle--width;
     display: none;
