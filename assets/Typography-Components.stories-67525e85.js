@@ -1,0 +1,3 @@
+import{a as n,j as o}from"./jsx-runtime-29545a09.js";import{T as p,G as m,L as c}from"./Text-80669967.js";import"./index-d3ea75b5.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./index-8d47fad6.js";const T={title:"Typography/Components",component:p,parameters:{layout:"centered",controls:{sort:"alpha"}},tags:["autodocs"],argTypes:{}},i=e=>n(m,{gap:"5px",children:[o(p,{...e,children:"Text"}),o(c,{...e,children:"Link"})]}),r={render:i};var a,t,s;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  render: TyphographyExample
+}`,...(s=(t=r.parameters)==null?void 0:t.docs)==null?void 0:s.source}}};const u=["Example"];export{r as Example,u as __namedExportsOrder,T as default};
